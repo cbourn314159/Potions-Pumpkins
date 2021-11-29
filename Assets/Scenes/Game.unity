@@ -381,6 +381,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2522117289681513507, guid: 900d3d137925aaa428bbe2f576e4a4f1, type: 3}
+      propertyPath: sensX
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522117289681513507, guid: 900d3d137925aaa428bbe2f576e4a4f1, type: 3}
+      propertyPath: sensY
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6470878958942812145, guid: 900d3d137925aaa428bbe2f576e4a4f1, type: 3}
       propertyPath: m_TagString
       value: MainCamera
@@ -420,7 +428,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.05490196, g: 0.07058824, b: 0.1981132, a: 1}
+  m_Color: {r: 0.05490196, g: 0.07058824, b: 0.2, a: 1}
   m_Intensity: 2
   m_Range: 33.347164
   m_SpotAngle: 48.465656
@@ -602,6 +610,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boxRoom_3
       objectReference: {fileID: 0}
+    - target: {fileID: 7532827975373846158, guid: c2e5d06577666ae41bace4fabf85619a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2e5d06577666ae41bace4fabf85619a, type: 3}
 --- !u!20 &1957574921 stripped
@@ -774,16 +786,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4116131377651361987, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -620
+      value: -907
       objectReference: {fileID: 0}
     - target: {fileID: 4116131377651361987, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 270
+      value: 419
       objectReference: {fileID: 0}
     - target: {fileID: 4509746803659638858, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1957574921}
+    - target: {fileID: 4509746803659638858, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4509746803659638859, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -875,6 +891,38 @@ PrefabInstance:
     - target: {fileID: 4509746803659638903, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
       propertyPath: m_Name
       value: SpiceUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509746804802325288, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509746804802325288, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -780
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509746804802325288, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509746804802325288, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509746804802325289, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
+      propertyPath: m_text
+      value: Spice Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509746804802325289, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
+      propertyPath: m_fontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509746804802325289, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
+      propertyPath: m_margin.w
+      value: 182.65698
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509746804802325289, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
