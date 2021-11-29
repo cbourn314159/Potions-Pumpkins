@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Keybinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
+    [SerializeField] KeyCode inventoryKey = KeyCode.I;
+
 
     public float movementMultiplier = 10f;
     [SerializeField] public float airMultiplier = 0.4f;
@@ -40,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
-
+    public Inventory inventoryConsole;
     // Update is called once per frame
     void Update()
     {
@@ -54,6 +56,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(jumpKey) && isGrounded) 
         {
             Jump();
+        }
+        if (Input.GetKeyDown(inventoryKey))
+        {
+            inventoryConsole.gameObject.SetActive(inventoryConsole.gameObject.activeSelf);  //toggles between true/false based on active self at that moment
         }
     }
 
