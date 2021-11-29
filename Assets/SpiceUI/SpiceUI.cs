@@ -29,7 +29,7 @@ public class SpiceUI : MonoBehaviour
 
         spiceTextMeshPro = spiceText.GetComponent<TMP_Text>();
 
-        characterPositionCenter = spiceCharacter.transform.position;
+        characterPositionCenter = Camera.main.WorldToViewportPoint(spiceCharacter.transform.position);
         characterRotationCenter = spiceCharacter.transform.rotation;
 
         time = 0;
@@ -37,8 +37,8 @@ public class SpiceUI : MonoBehaviour
         floatUp = true;
 
         spiceTextSpeed = .1f;
-        spiceFloatBoundariesY = .5f;
-        spiceFloatSpeedY = 1f;
+        spiceFloatBoundariesY = .01f;
+        spiceFloatSpeedY = .02f;
     }
 
     // Update is called once per frame
@@ -118,12 +118,13 @@ public class SpiceUI : MonoBehaviour
 
     public void SpiceFloatingMovement()
     {
+        Vector3 relativeCharacterPosition = Camera.main.WorldToViewportPoint(spiceCharacter.transform.position);
         float yMovement;
-        if(spiceCharacter.transform.position.y - characterPositionCenter.y > spiceFloatBoundariesY)
+        if(relativeCharacterPosition.y - characterPositionCenter.y > spiceFloatBoundariesY)
         {
             floatUp = false;
         }
-        if(spiceCharacter.transform.position.y - characterPositionCenter.y < -spiceFloatBoundariesY)
+        if(relativeCharacterPosition.y - characterPositionCenter.y < -spiceFloatBoundariesY)
         {
             floatUp = true;
         }
