@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    //Add pickup items script here
+    ////Add pickup items script here
 
 }
