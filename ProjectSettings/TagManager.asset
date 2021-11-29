@@ -6,6 +6,7 @@ TagManager:
   tags:
   - button
   - Inventory
+  - SpiceUI
   layers:
   - Default
   - TransparentFX
