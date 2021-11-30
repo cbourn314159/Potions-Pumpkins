@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - button
+  - Inventory
   - SpiceUI
   layers:
   - Default

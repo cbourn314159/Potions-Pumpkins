@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -49,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         ControlDrag();
 
-        print(rb.drag);
+        //print(rb.drag);
 
         if (Input.GetKeyDown(jumpKey) && isGrounded) 
         {
