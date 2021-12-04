@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     bool isGrounded;
 
+    public AudioSource sound;
+
     Vector3 moveDirection;
 
     Rigidbody rb;
@@ -39,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        sound = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -62,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
         verticalMovement = Input.GetAxisRaw("Vertical");
 
         moveDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
+
     }
 
     void ControlDrag() 
@@ -79,15 +83,20 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer() 
     {
+
         if (isGrounded)
         {
+            
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+            
         }
         else if (!isGrounded) 
         {
             Physics.gravity = new Vector3(0, gravityForce, 0);
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
+            //sound.Play();
         }
+
     }
 
     void Jump() 
