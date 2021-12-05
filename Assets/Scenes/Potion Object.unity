@@ -352,6 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d742dd7434caa6743bc684571e38e8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCam: {fileID: 1612478084}
+  playerOrientation: {fileID: 1500751248}
   inventoryPrefab: {fileID: 1079245007}
 --- !u!1001 &563913197
 PrefabInstance:
@@ -1070,6 +1072,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221922691}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1500751248 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5084482931078332852, guid: 900d3d137925aaa428bbe2f576e4a4f1, type: 3}
+  m_PrefabInstance: {fileID: 364393158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1612478084 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3225287072459323296, guid: 900d3d137925aaa428bbe2f576e4a4f1, type: 3}
+  m_PrefabInstance: {fileID: 364393158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1664911727
 PrefabInstance:
   m_ObjectHideFlags: 0
