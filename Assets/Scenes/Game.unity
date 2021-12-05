@@ -769,11 +769,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497584313765627732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d742dd7434caa6743bc684571e38e8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCam: {fileID: 0}
+  playerOrientation: {fileID: 0}
   inventoryPrefab: {fileID: 0}
 --- !u!114 &1310913515
 MonoBehaviour:
@@ -782,11 +784,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497584313765627732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d742dd7434caa6743bc684571e38e8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCam: {fileID: 0}
+  playerOrientation: {fileID: 0}
   inventoryPrefab: {fileID: 1453963884}
 --- !u!82 &1310913520
 AudioSource:
