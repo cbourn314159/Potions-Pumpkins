@@ -21,6 +21,8 @@ public class SpiceUI : MonoBehaviour
     public float spiceTextSpeed;
     public float spiceFloatBoundariesY;
     public float spiceFloatSpeedY;
+    public bool damaged;
+    public float damageTimer;
     int testTextChain;
 
     // Start is called before the first frame update
@@ -43,6 +45,8 @@ public class SpiceUI : MonoBehaviour
         spiceFloatBoundariesY = .01f;
         spiceFloatSpeedY = .02f;
         testTextChain = 0;
+
+        damaged = false;
     }
 
     // Update is called once per frame
@@ -60,6 +64,18 @@ public class SpiceUI : MonoBehaviour
         else
         {
             nextText = false;
+        }
+
+        if (damaged == true)
+        {
+            damageTimer = 0;
+            damaged = false;
+            GetComponent<Image>().enabled = true;
+        }
+        damageTimer += Time.deltaTime;
+        if (damageTimer >= .5)
+        {
+            GetComponent<Image>().enabled = false;
         }
         
         if (nextText)

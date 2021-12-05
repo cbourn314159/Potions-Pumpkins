@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool isGrounded;
 
-    public AudioSource sound;
+    public Animator animator;
 
     Vector3 moveDirection;
 
@@ -41,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        sound = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -66,6 +65,14 @@ public class PlayerMovement : MonoBehaviour
 
         moveDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
 
+        if (horizontalMovement == 0 && verticalMovement == 0)
+        {
+            animator.SetBool("WalkingAnimation", false);
+        }
+        else
+        {
+            animator.SetBool("WalkingAnimation", true);
+        }
     }
 
     void ControlDrag() 
@@ -86,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
             
         }
@@ -94,7 +100,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Physics.gravity = new Vector3(0, gravityForce, 0);
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
-            //sound.Play();
         }
 
     }

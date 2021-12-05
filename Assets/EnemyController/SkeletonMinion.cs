@@ -46,7 +46,7 @@ public class SkeletonMinion : MonoBehaviour
 
         if (animator.GetBool("AttackHit") && distanceToPlayer < 2)
         {
-            spiceUI.GetComponent<Image>().enabled = true;
+            spiceUI.GetComponent<SpiceUI>().damaged = true;
         }
 
         ResetAnimationStates();
