@@ -138,7 +138,6 @@ MonoBehaviour:
   jumpKey: 32
   movementMultiplier: 10
   airMultiplier: 0.4
-  sound: {fileID: 0}
 --- !u!114 &2522117289681513507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4686748908296199225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0.22, z: 0.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 497584314740667520}
@@ -528,11 +527,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 806648d46d2617448860a2571bde1fdd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.81
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 806648d46d2617448860a2571bde1fdd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.375
+      value: -0.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 806648d46d2617448860a2571bde1fdd, type: 3}
       propertyPath: m_LocalPosition.z
