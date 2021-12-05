@@ -7,7 +7,6 @@ TagManager:
   - button
   - Inventory
   - SpiceUI
-  - SkeletonMinion
   layers:
   - Default
   - TransparentFX
