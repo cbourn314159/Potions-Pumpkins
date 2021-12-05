@@ -13,6 +13,7 @@ public class SpiceUI : MonoBehaviour
     public Quaternion characterRotationCenter;
     public float time;
     public bool isTyping;
+    public bool nextText;
     public string typeOutText;
     public int typeOutTextIndex;
     public float typeOutTextTimer;
@@ -20,6 +21,7 @@ public class SpiceUI : MonoBehaviour
     public float spiceTextSpeed;
     public float spiceFloatBoundariesY;
     public float spiceFloatSpeedY;
+    int testTextChain;
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +36,13 @@ public class SpiceUI : MonoBehaviour
 
         time = 0;
         isTyping = false;
+        nextText = false;
         floatUp = true;
 
         spiceTextSpeed = .1f;
         spiceFloatBoundariesY = .01f;
         spiceFloatSpeedY = .02f;
+        testTextChain = 0;
     }
 
     // Update is called once per frame
@@ -49,13 +53,24 @@ public class SpiceUI : MonoBehaviour
         {
             TypeOutSpiceText(typeOutText);
         }
-        if(Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.C) && isTyping == false)
         {
-            ChangeSpiceText("This is an example of Spice the Pumpkin speaking.");
+            nextText = true;
         }
-        if (Input.GetKeyDown(KeyCode.O))
+        else
         {
-            ClearSpiceText();
+            nextText = false;
+        }
+        
+        if (nextText)
+        {
+            switch (testTextChain)
+            {
+                case 0: ChangeSpiceText("This is an example of Spice the Pumpkin speaking."); testTextChain++; break;
+                case 1: ChangeSpiceText("Here's her saying something else."); testTextChain++; break;
+                case 2: ChangeSpiceText("Last part of text chain."); testTextChain++; break;
+                case 3: ClearSpiceText(); break;
+            }
         }
         SpiceFloatingMovement();
     }
@@ -70,20 +85,17 @@ public class SpiceUI : MonoBehaviour
 
     public void ChangeSpiceText(string newSpiceText)
     {
-        if(!isTyping)
+        if (CheckSpiceTextLength(newSpiceText))
         {
-            if (CheckSpiceTextLength(newSpiceText))
-            {
-                spiceTextMeshPro.text = "Spice Text Too Long!";
-            }
-            else
-            {
-                isTyping = true;
-                spiceTextMeshPro.text = "";
-                typeOutText = newSpiceText;
-                typeOutTextIndex = 0;
-                typeOutTextTimer = time;
-            }
+            spiceTextMeshPro.text = "Spice Text Too Long!";
+        }
+        else
+        {
+            isTyping = true;
+            spiceTextMeshPro.text = "";
+            typeOutText = newSpiceText;
+            typeOutTextIndex = 0;
+            typeOutTextTimer = time;
         }
     }
 
