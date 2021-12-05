@@ -9,18 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: f142afa91bca60b45bcd49d4f70fb0f0
   - enabled: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
     path: Assets/Scenes/Game.unity
     guid: aa0ddd811c99e534d8cc55b4c73d424a
-<<<<<<< HEAD
-=======
   - enabled: 1
-=======
->>>>>>> parent of b5502fc (Created standard enemy minion)
-=======
->>>>>>> parent of b5502fc (Created standard enemy minion)
     path: Assets/Scenes/Rooms.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
->>>>>>> parent of b71cd53 (Merge branch 'main' into enemies)
   m_configObjects: {}
