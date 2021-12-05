@@ -1575,6 +1575,7 @@ Transform:
   m_PrefabInstance: {fileID: 2077064704}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &2097702762 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5255758262770896491, guid: 3342c64594404df499691af9a4f5b439, type: 3}
@@ -1593,6 +1594,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.000002, y: 4, z: 1.5000007}
   m_Center: {x: -0.000007748604, y: 1.999999, z: -1.7763573e-15}
+=======
+>>>>>>> parent of b5502fc (Created standard enemy minion)
 =======
 >>>>>>> parent of b5502fc (Created standard enemy minion)
 --- !u!1001 &6722547223555210875
@@ -1743,6 +1746,7 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 4509746804802325291, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -1755,6 +1759,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of b5502fc (Created standard enemy minion)
 =======
 >>>>>>> parent of b5502fc (Created standard enemy minion)
     m_RemovedComponents: []
