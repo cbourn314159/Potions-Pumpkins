@@ -457,11 +457,70 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 1.6099999, y: 4, z: 1.6099999}
   m_Center: {x: 0, y: 2, z: -0.0000005662441}
 --- !u!1 &1222318769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5255758262478048447, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+=======
+  m_Modification:
+    m_TransformParent: {fileID: 892778944}
+    m_Modifications:
+    - target: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 34.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913811588249355127, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_Name
+      value: hallway_4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+--- !u!4 &973426834 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+>>>>>>> parent of b5502fc (Created standard enemy minion)
   m_PrefabInstance: {fileID: 973426833}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1310913512
@@ -1194,49 +1253,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5430983555173174284, guid: 4af661552b12457498275021eb38ba0d, type: 3}
   m_PrefabInstance: {fileID: 1497687235}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1597433151 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4509746803659638903, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
-  m_PrefabInstance: {fileID: 6722547223555210875}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1597433156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597433151}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.25948733, b: 0.25948733, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ed1074391f139544d941ae0870937dc0, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1597433157
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597433151}
-  m_CullTransparentMesh: 1
 --- !u!1001 &1775950369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1298,6 +1314,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5474560482711839218, guid: 6e2fec88c3498a0409242fe3a88a0bfd, type: 3}
   m_PrefabInstance: {fileID: 1775950369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1957574921 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4329204114942983736, guid: 900d3d137925aaa428bbe2f576e4a4f1, type: 3}
+  m_PrefabInstance: {fileID: 1310913512}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1972551086
 PrefabInstance:
@@ -1553,6 +1574,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9062459440128543786, guid: bf9ff1a1275144e438dfe82cbed101f9, type: 3}
   m_PrefabInstance: {fileID: 2077064704}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &2097702762 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5255758262770896491, guid: 3342c64594404df499691af9a4f5b439, type: 3}
@@ -1571,6 +1593,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.000002, y: 4, z: 1.5000007}
   m_Center: {x: -0.000007748604, y: 1.999999, z: -1.7763573e-15}
+=======
+>>>>>>> parent of b5502fc (Created standard enemy minion)
 --- !u!1001 &6722547223555210875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1718,6 +1742,7 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 32
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 4509746804802325291, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -1730,6 +1755,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of b5502fc (Created standard enemy minion)
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10eec6e4b64f50544a0a10d40feeade1, type: 3}
 --- !u!224 &6722547223555210876 stripped
