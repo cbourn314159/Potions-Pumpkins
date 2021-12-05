@@ -2,19 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Defeated : StateMachineBehaviour
+public class DieAnimation : StateMachineBehaviour
 {
-
-    public AudioSource sound;
-    public GameObject skeleton;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        animator.SetBool("Defeat",false);
-        skeleton = GameObject.FindGameObjectWithTag("SkeletonMinion");
-        sound = skeleton.GetComponent<AudioSource>();
-        sound.Play();
-    }
+    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -22,10 +16,10 @@ public class Defeated : StateMachineBehaviour
     //    
     //}
 
-
+    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
-        
+    //    
     //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
