@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -354,6 +354,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1184897004391203265, guid: 002ca8f6f08e0c84dbf6be708bcc153d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 002ca8f6f08e0c84dbf6be708bcc153d, type: 3}
 --- !u!1001 &3375587041484298435
@@ -410,6 +414,10 @@ PrefabInstance:
     - target: {fileID: 3375587041364581762, guid: a0cd801db22e97245bca9a1865165d16, type: 3}
       propertyPath: m_Name
       value: hallway_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3375587041457946648, guid: a0cd801db22e97245bca9a1865165d16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.75
       objectReference: {fileID: 0}
     - target: {fileID: 3375587042293844330, guid: a0cd801db22e97245bca9a1865165d16, type: 3}
       propertyPath: m_IsActive
@@ -492,6 +500,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4913811588711806377, guid: 3342c64594404df499691af9a4f5b439, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3342c64594404df499691af9a4f5b439, type: 3}
 --- !u!1001 &5430983553817355137
@@ -501,6 +513,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5430983554640371665, guid: 4af661552b12457498275021eb38ba0d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5430983555173174284, guid: 4af661552b12457498275021eb38ba0d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -606,6 +622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hallway_1
       objectReference: {fileID: 0}
+    - target: {fileID: 5474560483038172005, guid: 6e2fec88c3498a0409242fe3a88a0bfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e2fec88c3498a0409242fe3a88a0bfd, type: 3}
 --- !u!1001 &6859603110789595156
@@ -615,6 +635,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6859603108977780584, guid: 85dfb2e211c0c0c45a98904b7246c5cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.75
+      objectReference: {fileID: 0}
     - target: {fileID: 6859603109947960660, guid: 85dfb2e211c0c0c45a98904b7246c5cd, type: 3}
       propertyPath: m_Name
       value: hallway_2
@@ -720,6 +744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boxRoom_3
       objectReference: {fileID: 0}
+    - target: {fileID: 7226187177837545079, guid: c2e5d06577666ae41bace4fabf85619a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2e5d06577666ae41bace4fabf85619a, type: 3}
 --- !u!1001 &8316999945752357313
@@ -729,6 +757,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8316999946226869610, guid: cfa236959a2c8754c9341863e5237a07, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.75
+      objectReference: {fileID: 0}
     - target: {fileID: 8316999946760973360, guid: cfa236959a2c8754c9341863e5237a07, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -786,6 +818,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8633335252613889425, guid: f1205d801815d1044a3b470a9e874ced, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.75
+      objectReference: {fileID: 0}
     - target: {fileID: 8633335253277261410, guid: f1205d801815d1044a3b470a9e874ced, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -891,6 +927,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8918197468269384405, guid: fdd84a34796f5c5419393b7dae0162ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.75
+      objectReference: {fileID: 0}
     - target: {fileID: 8918197469257702283, guid: fdd84a34796f5c5419393b7dae0162ea, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -951,6 +991,10 @@ PrefabInstance:
     - target: {fileID: 9062459440128543789, guid: bf9ff1a1275144e438dfe82cbed101f9, type: 3}
       propertyPath: m_Name
       value: boxRoom_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062459440446420905, guid: bf9ff1a1275144e438dfe82cbed101f9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9ff1a1275144e438dfe82cbed101f9, type: 3}
