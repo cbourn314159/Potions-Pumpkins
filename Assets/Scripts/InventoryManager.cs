@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public Transform playerCam;
-    public Transform playerOrientation;
 
     bool inventoryOpen = false;
+
 
     public GameObject inventoryPrefab;
     // Start is called before the first frame update
     void Start()
     {
-        playerCam = playerCam.GetComponent<Transform>();
-        playerOrientation = playerOrientation.GetComponent<Transform>();
+        //playerCam = playerCam.GetComponent<Transform>();
+        //playerOrientation = playerOrientation.GetComponent<Transform>();
+        //GameObject testItem = GameObject.Find("testItem");
 
     }
 
@@ -47,14 +47,19 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    //Item Pickups
+    //Item finds and pickups
     public void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.name == "testItem")
+        GameObject testItem = GameObject.Find("testItem");
+
+        if (col.gameObject == testItem) 
         {
-            print("trigger collision!");
-            Destroy(col.gameObject);
+
+            print("item found!");
+            Destroy(col.gameObject);    //remove item from unity scene
         }
+
+
     }
 
 
