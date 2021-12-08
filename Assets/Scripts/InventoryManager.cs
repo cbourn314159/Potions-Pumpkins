@@ -7,16 +7,16 @@ public class InventoryManager : Inventory
 {
     bool inventoryOpen = false;
     private Inventory inv;
-    public GameObject Honey_Jar_01;
-    public GameObject Cream_Lrg_Open;
+    //public GameObject Honey_Jar_01;
+    //public GameObject Cream_Lrg_Open;
 
 
 
     //Inventory.GetComponent<Image>().sprite = image;  //assigns new source image
 
-    //GameObject milkLarge = new GameObject("milkLarge");
-    public GameObject honey;
-    public GameObject milk;
+    ////GameObject milkLarge = new GameObject("milkLarge");
+    //public GameObject honey;
+    //public GameObject milk;
     GameObject item;
 
     public List<GameObject> targetList;
@@ -30,8 +30,8 @@ public class InventoryManager : Inventory
         //item = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
 
 
-        GameObject honey = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
-        GameObject milk = Instantiate(Cream_Lrg_Open, new Vector3(0, 0, 0), Quaternion.identity);
+        //GameObject honey = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
+        //GameObject milk = Instantiate(Cream_Lrg_Open, new Vector3(0, 0, 0), Quaternion.identity);
 
 
     }
@@ -46,8 +46,28 @@ public class InventoryManager : Inventory
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            inventoryPrefab.gameObject.SetActive(!inventoryPrefab.gameObject.activeSelf);  //toggles between true/false based on active self at that moment
+            if (inventoryOpen == false)
+            {
+                inventoryPrefab.gameObject.SetActive(!inventoryPrefab.gameObject.activeSelf);  //toggles between true/false based on active self at that moment
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                //playerCam.transform.rotation = Quaternion.Euler(-xRotation, yRotation, 0);
+                //playerOrientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
+
+                inventoryOpen = true;
+                print("inventory opened");
+            }
+            else
+            {
+                inventoryPrefab.gameObject.SetActive(!inventoryPrefab.gameObject.activeSelf);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                inventoryOpen = false;
+                print("inventory closed");
+            }
         }
+
+
     }
 
     //Item finds and pickups
@@ -57,16 +77,16 @@ public class InventoryManager : Inventory
         switch (col.tag)
         {
             case "milkLarge":
-                item = milk;
+                //item = milk;
                 print("MILK found");
-                inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
+                // inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
                 Destroy(col.gameObject);    //remove item from unity scene
                 break;
             case "honeyJar":
-                item = honey;
+                // item = honey;
                 print("HONEY found");
-                inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
-                Destroy(col.gameObject);   
+                // inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
+                Destroy(col.gameObject);
                 break;
             default:
                 print("NO");
