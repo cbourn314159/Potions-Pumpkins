@@ -3,14 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : Inventory
 {
     bool inventoryOpen = false;
+    private Inventory inv;
+    
+    //Inventory.GetComponent<Image>().sprite = image;  //assigns new source image
+
+    //GameObject milkLarge = new GameObject("milkLarge");
+    public GameObject honey;
+    public GameObject milk;
 
     public GameObject inventoryPrefab;
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    private void Awake()
+    {
+        inv = GetComponent<Inventory>();
     }
 
     // Update is called once per frame
@@ -50,11 +63,13 @@ public class InventoryManager : MonoBehaviour
         {
             case "milkLarge":
                 print("MILK found");
+               // inv.addNewItem(milk);    //add picked up item to inventory (inventory.cs)
                 Destroy(col.gameObject);    //remove item from unity scene
                 break;
             case "honeyJar":
                 print("HONEY found");
-                Destroy(col.gameObject);    //remove item from unity scene
+               // inv.addNewItem(honey);    //add picked up item to inventory (inventory.cs)
+                Destroy(col.gameObject);   
                 break;
             default:
                 print("NO");
