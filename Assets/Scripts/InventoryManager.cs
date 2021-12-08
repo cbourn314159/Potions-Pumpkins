@@ -5,19 +5,12 @@ using System;
 
 public class InventoryManager : MonoBehaviour
 {
-
     bool inventoryOpen = false;
-
 
     public GameObject inventoryPrefab;
     // Start is called before the first frame update
     void Start()
     {
-
-        //playerCam = playerCam.GetComponent<Transform>();
-        //playerOrientation = playerOrientation.GetComponent<Transform>();
-        //GameObject testItem = GameObject.Find("testItem");
-
     }
 
     // Update is called once per frame
@@ -67,8 +60,5 @@ public class InventoryManager : MonoBehaviour
                 print("NO");
                 break;
         }
-
-
     }
-
 }
