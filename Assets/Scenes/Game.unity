@@ -2418,7 +2418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &660734850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3845,7 +3845,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.05490196, g: 0.07058824, b: 0.2, a: 1}
+  m_Color: {r: 0.22095527, g: 0.19619079, b: 0.6226415, a: 1}
   m_Intensity: 2
   m_Range: 33.347164
   m_SpotAngle: 48.465656
@@ -4278,6 +4278,11 @@ PrefabInstance:
 --- !u!224 &1453963883 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3577617484939982113, guid: 241b3390f47032447abddda9b5750d51, type: 3}
+  m_PrefabInstance: {fileID: 1453963882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1475270306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3577617484939982118, guid: 241b3390f47032447abddda9b5750d51, type: 3}
   m_PrefabInstance: {fileID: 1453963882}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1496823704
@@ -9038,7 +9043,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d742dd7434caa6743bc684571e38e8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryPrefab: {fileID: 0}
+  childObj: {fileID: 0}
+  Honey_Jar_01: {fileID: 0}
+  Cream_Lrg_Open: {fileID: 0}
+  honey: {fileID: 0}
+  milk: {fileID: 0}
+  targetList: []
+  inventoryPrefab: {fileID: 1475270306}
 --- !u!82 &359242623347682745
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9614,7 +9625,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5283019, g: 0.31598434, b: 0.4537649, a: 1}
-  m_Intensity: 5.15
+  m_Intensity: 15
   m_Range: 3.84
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

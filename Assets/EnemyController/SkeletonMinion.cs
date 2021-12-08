@@ -17,7 +17,7 @@ public class SkeletonMinion : MonoBehaviour
     public float distanceToPlayer;
 
     [Header("Damage Taken")]
-    public int wandDamage = 2;
+    public int wandDamage = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +35,6 @@ public class SkeletonMinion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            health = 0;
-        }
-
         SkeletonFunctionality();
     }
 
@@ -57,7 +52,7 @@ public class SkeletonMinion : MonoBehaviour
 
         if (animator.GetBool("AttackHit") && distanceToPlayer < 2)
         {
-            spiceUI.GetComponent<Image>().enabled = true;
+            spiceUI.GetComponent<SpiceUI>().damaged = true;
         }
 
         ResetAnimationStates();
@@ -65,6 +60,7 @@ public class SkeletonMinion : MonoBehaviour
         if (health <= 0 && death == false)
         {
             death = true;
+            spiceUI.GetComponent<SpiceUI>().ChangeSpiceText("Wow. Surprised that you won. Congrats, I guess... The End. Go home. Seriously, you can leave now.");
             animator.SetBool("Defeat", true);
         }
 
