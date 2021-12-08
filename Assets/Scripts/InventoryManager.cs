@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class InventoryManager : Inventory
+public class InventoryManager : MonoBehaviour
 {
 
     bool inventoryOpen = false;
@@ -12,6 +13,7 @@ public class InventoryManager : Inventory
     // Start is called before the first frame update
     void Start()
     {
+
         //playerCam = playerCam.GetComponent<Transform>();
         //playerOrientation = playerOrientation.GetComponent<Transform>();
         //GameObject testItem = GameObject.Find("testItem");
@@ -50,17 +52,23 @@ public class InventoryManager : Inventory
     //Item finds and pickups
     public void OnTriggerEnter(Collider col)
     {
-        GameObject testItem = GameObject.Find("testItem");
-
-        if (col.gameObject == testItem) 
+        //Pick up items and remove from scene
+        switch (col.tag)
         {
-            print("item found!");
-
-            Destroy(col.gameObject);    //remove item from unity scene
+            case "milkLarge":
+                print("MILK found");
+                Destroy(col.gameObject);    //remove item from unity scene
+                break;
+            case "honeyJar":
+                print("HONEY found");
+                Destroy(col.gameObject);    //remove item from unity scene
+                break;
+            default:
+                print("NO");
+                break;
         }
 
 
     }
-
 
 }
