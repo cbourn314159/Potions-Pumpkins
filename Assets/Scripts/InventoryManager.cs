@@ -46,4 +46,16 @@ public class InventoryManager : MonoBehaviour
         
 
     }
+
+    //Item Pickups
+    public void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name == "testItem")
+        {
+            print("trigger collision!");
+            Destroy(col.gameObject);
+        }
+    }
+
+
 }
