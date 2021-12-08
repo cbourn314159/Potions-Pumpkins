@@ -1,0 +1,291 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3168619466459343661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8498733062799066314}
+  - component: {fileID: 2562050856231421938}
+  - component: {fileID: 1667940030394357604}
+  - component: {fileID: 8126694877902009397}
+  m_Layer: 0
+  m_Name: Tea_Cannister_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8498733062799066314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168619466459343661}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5196594379950387346}
+  - {fileID: 9083636790143765803}
+  - {fileID: 3023518232756384628}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2562050856231421938
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168619466459343661}
+  m_Mesh: {fileID: 4300000, guid: 3a9ea87ec868f6e4a960794a78da64cb, type: 3}
+--- !u!23 &1667940030394357604
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168619466459343661}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 636b3c5e94d804d458100041b6ca64c6, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8126694877902009397
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168619466459343661}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3a9ea87ec868f6e4a960794a78da64cb, type: 3}
+--- !u!1001 &7959023491563851616
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8498733062799066314}
+    m_Modifications:
+    - target: {fileID: 3378320227697680111, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_Name
+      value: Tea_Cannister_Tea_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+--- !u!4 &3023518232756384628 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5152558200863292436, guid: 0ee149bb7b06a134d84132eb0d38cdca, type: 3}
+  m_PrefabInstance: {fileID: 7959023491563851616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8045825168852497893
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8498733062799066314}
+    m_Modifications:
+    - target: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984579899021317545, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_Name
+      value: Tea_Cannister_Lid_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5672335888166883890, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 636b3c5e94d804d458100041b6ca64c6, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+--- !u!4 &5196594379950387346 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2861615705078515063, guid: 72873ac942baa15479562ee1dcd3bea1, type: 3}
+  m_PrefabInstance: {fileID: 8045825168852497893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9166513330791583987
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8498733062799066314}
+    m_Modifications:
+    - target: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731369073795387188, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+      propertyPath: m_Name
+      value: Tea_Cannister_Decal_05
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+--- !u!4 &9083636790143765803 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 88507139727252952, guid: 6b081cc7d9b5a1c449b1e4c0431153cd, type: 3}
+  m_PrefabInstance: {fileID: 9166513330791583987}
+  m_PrefabAsset: {fileID: 0}
