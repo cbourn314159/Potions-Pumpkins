@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Inventory : InventoryManager   
+public class Inventory : MonoBehaviour   
 {
     ////Add pickup items script here
     public Sprite apple;
-    public Image myImageComponent;
+    public Sprite a;
+    //public Image myImageComponent;
 
     void Start()
     {
-        apple = Resources.Load<Sprite>("Assets/Inventory/RPG_inventory_icons/apple.png"); //need to load the apple asset inside path
-        addNewItem(apple);
+        //apple = Resources.Load<Sprite>("Assets/Inventory/RPG_inventory_icons/apple.png"); //need to load the apple asset inside path
+        addNewItem(a);
 
-        //x = Resources.Load<Sprite>("close.png");
-        //addNewItem(x);
 
     }
 
@@ -32,15 +31,12 @@ public class Inventory : InventoryManager
     }
 
 
-
-
     void addNewItem(Sprite image)
     {
-        int children = transform.childCount;
-
+        int children = transform.GetChild(0).childCount;    //currently have # of inventory slots hardcoded
 
         //accessing children of itemsParent (all inventory slots)
-        for (int i = 0; i < 5; ++i)
+        for (int i = 0; i < 10 - 1; ++i)
         {
             //print("For loop: " + transform.GetChild(i));
             // GameObject InventorySlot = ItemsParent.transform.GetChild(i).gameObject;
@@ -48,7 +44,8 @@ public class Inventory : InventoryManager
             GameObject InventorySlot = ItemsParent.gameObject.transform.GetChild(i).gameObject;
             GameObject ItemButton = InventorySlot.gameObject.transform.GetChild(0).gameObject;
             GameObject placeHolderImage = ItemButton.gameObject.transform.GetChild(0).gameObject;
-            myImageComponent = GetComponent<Image>();
+            
+            //myImageComponent = GetComponent<Image>();
             
 
             //GameObject ItemsParent = transform.GetChild(0).gameObject;
@@ -60,10 +57,23 @@ public class Inventory : InventoryManager
             print("ItemButton?: " + InventorySlot.transform.GetChild(0).gameObject);
             print("placeHolderImage?: " + ItemButton.transform.GetChild(0).gameObject);
 
-           // placeHolderImage.SetActive(true);   //enables image component
+            placeHolderImage.SetActive(true);   //enables image component
             placeHolderImage.GetComponent<Image>().enabled = true;  //activating image component
-            //Destroy(placeHolderImage);    //removes image component
             placeHolderImage.GetComponent<Image>().sprite = image;  //assigns new source image
+            //placeHolderImage.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+
+            //////Destroy(placeHolderImage);    //removes image component
+            ////if(placeHolderImage.GetComponent<Image>().sprite = null)
+            ////{
+            ////    placeHolderImage.GetComponent<Image>().sprite = image;  //assigns new source image
+            ////    print("ADDED");
+            ////}
+            ////else
+            ////{
+            ////    placeHolderImage.GetComponent<Image>().sprite = image;  //assigns new source image
+
+            ////    print("NO IMAGE ADDED");
+            ////}
 
 
             //gameObject.GetComponent<Image>().sprite = apple;

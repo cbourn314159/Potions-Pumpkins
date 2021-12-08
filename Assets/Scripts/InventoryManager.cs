@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : Inventory
 {
 
     bool inventoryOpen = false;
@@ -54,8 +54,8 @@ public class InventoryManager : MonoBehaviour
 
         if (col.gameObject == testItem) 
         {
-
             print("item found!");
+
             Destroy(col.gameObject);    //remove item from unity scene
         }
 
