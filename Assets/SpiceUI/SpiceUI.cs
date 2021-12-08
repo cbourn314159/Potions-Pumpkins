@@ -22,6 +22,8 @@ public class SpiceUI : MonoBehaviour
     public float spiceFloatBoundariesY;
     public float spiceFloatSpeedY;
     int testTextChain;
+    public bool damaged;
+    public float damageTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -36,10 +38,11 @@ public class SpiceUI : MonoBehaviour
 
         time = 0;
         isTyping = false;
-        nextText = false;
+        nextText = true;
         floatUp = true;
+        damaged = false;
 
-        spiceTextSpeed = .1f;
+        spiceTextSpeed = .025f;
         spiceFloatBoundariesY = .01f;
         spiceFloatSpeedY = .02f;
         testTextChain = 0;
@@ -53,6 +56,23 @@ public class SpiceUI : MonoBehaviour
         {
             TypeOutSpiceText(typeOutText);
         }
+
+        if (nextText)
+        {
+            switch (testTextChain)
+            {
+                case 0: ChangeSpiceText("Heyo bozo, name's Spice. You look like need help to pass your Univesity of Witchigan-Deadborn final exam. First off, press [C] or we can just sit here in awkward silence."); break;
+                case 1: ChangeSpiceText("Glad you like my charismatic company ;). Use [W][A][S][D] to walk around. That seemed pretty obvious, but can't be too sure with someone of your caliber."); break;
+                case 2: ChangeSpiceText("For ULTIMATE CHRONOMANCY POWER!!!!!, press [Esc] to enter the pause menu, duh."); break;
+                case 3: ChangeSpiceText("Hit [Space Bar] to throw your tiny body upwards or [Shift] to get the zoomies. If you want be rad as hell, you can run next to a wall to climb."); break;
+                case 4: ChangeSpiceText("Wanna toggle your inventory and pop out some potions? Hit [E]. (Uhhhhh maybe just have fun opening the inventory, potions are pending)"); break;
+                case 5: ChangeSpiceText("So, you see that friendly boi over there down the hallway. Go say hi. He's very friendly."); break;
+                case 6: ChangeSpiceText("Okay, okay, ya got me. [Left-Click] or hit [Ctrl] to fire an arcane blast and smoke his ass."); break;
+                case 7: ClearSpiceText(); break;
+            }            
+            testTextChain++;
+        }
+
         if (Input.GetKeyDown(KeyCode.C) && isTyping == false)
         {
             nextText = true;
@@ -61,17 +81,19 @@ public class SpiceUI : MonoBehaviour
         {
             nextText = false;
         }
-        
-        if (nextText)
+
+        if (damaged == true)
         {
-            switch (testTextChain)
-            {
-                case 0: ChangeSpiceText("This is an example of Spice the Pumpkin speaking."); testTextChain++; break;
-                case 1: ChangeSpiceText("Here's her saying something else."); testTextChain++; break;
-                case 2: ChangeSpiceText("Last part of text chain."); testTextChain++; break;
-                case 3: ClearSpiceText(); break;
-            }
+            damageTimer = 0;
+            damaged = false;
+            GetComponent<Image>().enabled = true;
         }
+        damageTimer += Time.deltaTime;
+        if (damageTimer >= .5)
+        {
+            GetComponent<Image>().enabled = false;
+        }
+
         SpiceFloatingMovement();
     }
 
