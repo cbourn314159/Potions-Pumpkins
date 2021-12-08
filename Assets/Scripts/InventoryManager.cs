@@ -7,16 +7,16 @@ public class InventoryManager : Inventory
 {
     bool inventoryOpen = false;
     private Inventory inv;
-    public GameObject Honey_Jar_01;
-    public GameObject Cream_Lrg_Open;
+    //public GameObject Honey_Jar_01;
+    //public GameObject Cream_Lrg_Open;
 
 
 
     //Inventory.GetComponent<Image>().sprite = image;  //assigns new source image
 
-    //GameObject milkLarge = new GameObject("milkLarge");
-    public GameObject honey;
-    public GameObject milk;
+    ////GameObject milkLarge = new GameObject("milkLarge");
+    //public GameObject honey;
+    //public GameObject milk;
     GameObject item;
 
     public List<GameObject> targetList;
@@ -30,8 +30,8 @@ public class InventoryManager : Inventory
         //item = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
 
 
-        GameObject honey = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
-        GameObject milk = Instantiate(Cream_Lrg_Open, new Vector3(0, 0, 0), Quaternion.identity);
+        //GameObject honey = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
+        //GameObject milk = Instantiate(Cream_Lrg_Open, new Vector3(0, 0, 0), Quaternion.identity);
 
 
     }
@@ -57,15 +57,15 @@ public class InventoryManager : Inventory
         switch (col.tag)
         {
             case "milkLarge":
-                item = milk;
+                //item = milk;
                 print("MILK found");
-                inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
+               // inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
                 Destroy(col.gameObject);    //remove item from unity scene
                 break;
             case "honeyJar":
-                item = honey;
+               // item = honey;
                 print("HONEY found");
-                inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
+               // inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
                 Destroy(col.gameObject);   
                 break;
             default:
