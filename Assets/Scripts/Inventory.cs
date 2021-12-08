@@ -6,22 +6,24 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour   
 {
     ////Add pickup items script here
-    public GameObject _apple;
-    public GameObject _honey;
-    public GameObject Honey_Jar_01;
+  //  public GameObject _apple;
+    //public GameObject _honey;
+   // public GameObject Honey_Jar_01;
     public GameObject childObj;
     GameObject childObject;
     //public GameObject item;
 
-    public List<GameObject> targetList;
+    //public List<GameObject> targetList;
 
     void Start()
     {
-        targetList = new List<GameObject>(Resources.LoadAll<GameObject>("Resources"));
+        //targetList = new List<GameObject>(Resources.LoadAll<GameObject>("Resources"));
         //Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
-        GameObject item = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
+       // GameObject item = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
         //addNewItem(Honey_Jar_01);
-        addNewItem(item);
+
+
+       // addNewItem(item);
 
     }
 
@@ -41,7 +43,7 @@ public class Inventory : MonoBehaviour
     {
         int children = transform.GetChild(0).childCount;    //currently have # of inventory slots hardcoded
         //accessing children of itemsParent (all inventory slots)
-        for (int i = 0; i < 5 - 1; ++i)
+        for (int i = 0; i < children - 1; ++i)
         {
 
             GameObject ItemsParent = transform.GetChild(0).gameObject;
@@ -67,10 +69,6 @@ public class Inventory : MonoBehaviour
 
                 break;
 
-                //add new child component
-                //placeHolderImage.gameObject.AddComponent
-                //placeHolderImage.transform.parent = GameObject.(Honey_Jar_01).transform;
-                //childObj.transform.parent = placeHolderImage.transform;
             }
             else
             {
@@ -78,18 +76,6 @@ public class Inventory : MonoBehaviour
                 //keep counting up until empty slot found
             }
 
-
-            //if (placeHolderImage.GetComponent<Image>().sprite = null)
-            //{
-            //    placeHolderImage.GetComponent<Image>().sprite = image;  //assigns new source image
-            //    print("ADDED");
-            //}
-            //else
-            //{
-            //    placeHolderImage.GetComponent<Image>().sprite = image;  //assigns new source image
-
-            //    print("NO IMAGE ADDED");
-            //}
 
         }
     }
