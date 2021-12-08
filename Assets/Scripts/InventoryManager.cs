@@ -44,10 +44,30 @@ public class InventoryManager : Inventory
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            inventoryPrefab.gameObject.SetActive(!inventoryPrefab.gameObject.activeSelf);  //toggles between true/false based on active self at that moment
+            if (inventoryOpen == false)
+            {
+                inventoryPrefab.gameObject.SetActive(!inventoryPrefab.gameObject.activeSelf);  //toggles between true/false based on active self at that moment
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                //playerCam.transform.rotation = Quaternion.Euler(-xRotation, yRotation, 0);
+                //playerOrientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
+
+                inventoryOpen = true;
+                print("inventory opened");
+            }
+            else
+            {
+                inventoryPrefab.gameObject.SetActive(!inventoryPrefab.gameObject.activeSelf);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                inventoryOpen = false;
+                print("inventory closed");
+            }
         }
+
+
     }
 
     //Item finds and pickups
@@ -59,14 +79,14 @@ public class InventoryManager : Inventory
             case "milkLarge":
                 //item = milk;
                 print("MILK found");
-               // inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
+                // inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
                 Destroy(col.gameObject);    //remove item from unity scene
                 break;
             case "honeyJar":
-               // item = honey;
+                // item = honey;
                 print("HONEY found");
-               // inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
-                Destroy(col.gameObject);   
+                // inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
+                Destroy(col.gameObject);
                 break;
             default:
                 print("NO");

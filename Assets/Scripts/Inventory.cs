@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Inventory : MonoBehaviour   
+public class Inventory : MonoBehaviour
 {
     ////Add pickup items script here
-  //  public GameObject _apple;
+    //  public GameObject _apple;
     //public GameObject _honey;
-   // public GameObject Honey_Jar_01;
+    // public GameObject Honey_Jar_01;
     public GameObject childObj;
     GameObject childObject;
     //public GameObject item;
@@ -19,11 +19,11 @@ public class Inventory : MonoBehaviour
     {
         //targetList = new List<GameObject>(Resources.LoadAll<GameObject>("Resources"));
         //Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
-       // GameObject item = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
+        // GameObject item = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
         //addNewItem(Honey_Jar_01);
 
 
-       // addNewItem(item);
+        // addNewItem(item);
 
     }
 
