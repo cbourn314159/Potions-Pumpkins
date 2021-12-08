@@ -3535,6 +3535,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4913811588249355126, guid: 3342c64594404df499691af9a4f5b439, type: 3}
   m_PrefabInstance: {fileID: 973426833}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1161337961
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037466015311082042, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735474646041162344, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_Name
+      value: Cream_Lrg_Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735474646041162344, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735474646041162344, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+      propertyPath: m_TagString
+      value: CreamLarge
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
 --- !u!1 &1203047671
 GameObject:
   m_ObjectHideFlags: 0
@@ -3657,13 +3734,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 898780414179074265, guid: 6eec1752005e69f49b0cf4a2df4dc228, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 898780414179074267, guid: 6eec1752005e69f49b0cf4a2df4dc228, type: 3}
+      propertyPath: cream
+      value: 
+      objectReference: {fileID: 2112512722}
     - target: {fileID: 898780414179074267, guid: 6eec1752005e69f49b0cf4a2df4dc228, type: 3}
       propertyPath: death
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2497627725224183974, guid: 6eec1752005e69f49b0cf4a2df4dc228, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8379360498840916700, guid: 6eec1752005e69f49b0cf4a2df4dc228, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8379360498840916700, guid: 6eec1752005e69f49b0cf4a2df4dc228, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8675,6 +8764,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9062459440128543786, guid: bf9ff1a1275144e438dfe82cbed101f9, type: 3}
   m_PrefabInstance: {fileID: 2077064704}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2112512722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8735474646041162344, guid: d256d2ff76aa1dd438dece10ff3103f6, type: 3}
+  m_PrefabInstance: {fileID: 1161337961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &151872309135481108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8763,7 +8857,7 @@ Transform:
   - {fileID: 5735537840222369129}
   - {fileID: 7982784230866591216}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &151872309135481122
 CapsuleCollider:
@@ -9044,10 +9138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childObj: {fileID: 0}
-  Honey_Jar_01: {fileID: 0}
-  Cream_Lrg_Open: {fileID: 0}
-  honey: {fileID: 0}
-  milk: {fileID: 0}
   targetList: []
   inventoryPrefab: {fileID: 1475270306}
 --- !u!82 &359242623347682745
@@ -9528,8 +9618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95bb118794d2f454d85768f3ae99d062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 100
-  sensY: 100
+  sensX: 300
+  sensY: 300
   cam: {fileID: 5735537840222369129}
   orientation: {fileID: 4788451248408325141}
 --- !u!4 &2899980344546138625

@@ -7,6 +7,7 @@ public class SkeletonMinion : MonoBehaviour
 {
     public GameObject player;
     public GameObject spiceUI;
+    public GameObject cream;
     public Animator animator;
     public float walkSpeed;
     public float attackRange;
@@ -24,6 +25,8 @@ public class SkeletonMinion : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         spiceUI = GameObject.FindGameObjectWithTag("SpiceUI");
+        cream = GameObject.FindGameObjectWithTag("CreamLarge");
+        cream.SetActive(false);
         walkSpeed = 3;
         attackRange = 1.75f;
         attackArea = 2;
@@ -60,6 +63,8 @@ public class SkeletonMinion : MonoBehaviour
         if (health <= 0 && death == false)
         {
             death = true;
+            cream.transform.position = transform.position;
+            cream.SetActive(true);
             spiceUI.GetComponent<SpiceUI>().ChangeSpiceText("Wow. Surprised that you won. Congrats, I guess... The End. Go home. Seriously, you can leave now.");
             animator.SetBool("Defeat", true);
         }

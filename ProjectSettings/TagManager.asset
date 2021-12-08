@@ -9,6 +9,7 @@ TagManager:
   - SpiceUI
   - SkeletonMinion
   - Bullet
+  - CreamLarge
   layers:
   - Default
   - TransparentFX
