@@ -16,6 +16,9 @@ public class SkeletonMinion : MonoBehaviour
     public bool death;
     public float distanceToPlayer;
 
+    [Header("Damage Taken")]
+    public int wandDamage = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,13 +43,21 @@ public class SkeletonMinion : MonoBehaviour
         SkeletonFunctionality();
     }
 
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Bullet") 
+        {
+            health -= wandDamage;
+        }
+    }
+
     public void SkeletonFunctionality()
     {
         distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
 
         if (animator.GetBool("AttackHit") && distanceToPlayer < 2)
         {
-            spiceUI.GetComponent<SpiceUI>().damaged = true;
+            spiceUI.GetComponent<Image>().enabled = true;
         }
 
         ResetAnimationStates();
@@ -57,12 +68,12 @@ public class SkeletonMinion : MonoBehaviour
             animator.SetBool("Defeat", true);
         }
 
-        if (distanceToPlayer < attackArea && health != 0)
+        if (distanceToPlayer < attackArea && health != 0 && death == false)
         {
             Aggressive();
             animator.SetBool("Attack", true);
         }
-        else if (distanceToPlayer < aggressiveArea && health != 0)
+        else if (distanceToPlayer < aggressiveArea && death == false)
         {
             Aggressive();
             animator.SetBool("Run", true);

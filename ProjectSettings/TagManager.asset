@@ -8,6 +8,7 @@ TagManager:
   - Inventory
   - SpiceUI
   - SkeletonMinion
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Wand
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 

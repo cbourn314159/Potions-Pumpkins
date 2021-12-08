@@ -10,13 +10,19 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement")]
     public float moveSpeed = 6f;
-    
+
+    [Header("Sprinting")]
+    [SerializeField] float walkSpeed = 4f;
+    [SerializeField] float sprintSpeed = 6f;
+    [SerializeField] float acceleration = 10f;
+
     [Header("Jumping")]
     public float jumpForce = 5f;
     public float gravityForce = -25.0f;
 
     [Header("Keybinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
+    [SerializeField] KeyCode sprintKey = KeyCode.LeftShift;
 
     public float movementMultiplier = 10f;
     [SerializeField] public float airMultiplier = 0.4f;
@@ -28,27 +34,56 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMovement;
     float verticalMovement;
 
+    [Header("Ground Detection")]
+    [SerializeField] LayerMask groundMask;
+    [SerializeField] Transform groundCheck;
     bool isGrounded;
-
-    public Animator animator;
+    float groundDistance = 0.4f;
+    
+    [Header("Sound")]
+    public AudioSource sound;
 
     Vector3 moveDirection;
+    Vector3 slopeMoveDirection;
 
-    public Rigidbody rb;
+    //public Animator animator;
+    Rigidbody rb;
+    Animator anim;
+    [Header("Animator")]
+    public GameObject head;
+
+
+    RaycastHit slopeHit;
+    private bool OnSlope() 
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight / 2 + 0.5f)) 
+        {
+            if (slopeHit.normal != Vector3.up)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+        return false;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        sound = GetComponent<AudioSource>();
+        anim = head.GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight / 2 + 0.1f);
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         MyInput();
         ControlDrag();
+        ControlSpeed();
 
         //print(rb.drag);
 
@@ -56,6 +91,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+
+        slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
+
     }
 
     void MyInput() 
@@ -67,11 +105,23 @@ public class PlayerMovement : MonoBehaviour
 
         if (horizontalMovement == 0 && verticalMovement == 0)
         {
-            animator.SetBool("WalkingAnimation", false);
+            anim.SetTrigger("Idle");
         }
         else
         {
-            animator.SetBool("WalkingAnimation", true);
+            anim.SetTrigger("Walk");
+        }
+    }
+
+    void ControlSpeed() 
+    {
+        if (Input.GetKey(sprintKey) && isGrounded)
+        {
+            moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, acceleration * Time.deltaTime);
+        }
+        else 
+        {
+            moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, acceleration * Time.deltaTime);
         }
     }
 
@@ -91,21 +141,35 @@ public class PlayerMovement : MonoBehaviour
     void MovePlayer() 
     {
 
-        if (isGrounded)
+        if (isGrounded && !OnSlope())
         {
+            rb.useGravity = false;
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
-            
+            //print("grounded not on slope");
+
         }
-        else if (!isGrounded) 
+        else if (isGrounded && OnSlope()) 
         {
-            Physics.gravity = new Vector3(0, gravityForce, 0);
+            rb.useGravity = false;
+            rb.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+            //print("grounded and on slope");
+
+        }
+        else if (!isGrounded)
+        {
+            //rb.useGravity = true;
+            //Physics.gravity = new Vector3(0, gravityForce, 0);
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
+            //print("not grounded");
+
+            //sound.Play();
         }
 
     }
 
     void Jump() 
     {
+        rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 }
