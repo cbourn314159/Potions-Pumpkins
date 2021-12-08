@@ -6,24 +6,23 @@ using UnityEngine.UI;
 public class Inventory : InventoryManager   
 {
     ////Add pickup items script here
-
-    //public void addItem()
-    //{
-
-    //}        
-    //GameObject originalGameObject = GameObject.Find("ItemsParent");
-
+    public Sprite apple;
+    public Image myImageComponent;
 
     void Start()
     {
-        addNewItem();
-        Sprite apple = Resources.Load<Sprite>("apple"); //need to load the apple asset inside path
-       //path =  Assets / Inventory / RPG_inventory_icons / apple.png
+        apple = Resources.Load<Sprite>("Assets/Inventory/RPG_inventory_icons/apple.png"); //need to load the apple asset inside path
+        addNewItem(apple);
+
+        //x = Resources.Load<Sprite>("close.png");
+        //addNewItem(x);
+
     }
 
     private void Update()
     {
-        
+
+
     }
 
     void WithForeachLoop()
@@ -35,19 +34,40 @@ public class Inventory : InventoryManager
 
 
 
-    void addNewItem()
+    void addNewItem(Sprite image)
     {
         int children = transform.childCount;
 
+
         //accessing children of itemsParent (all inventory slots)
-        for (int i = 0; i < children; ++i)
+        for (int i = 0; i < 5; ++i)
         {
-            print("For loop: " + transform.GetChild(i));
-            GameObject inventorySlot = transform.GetChild(i).gameObject;
-            gameObject.GetComponent<Image>().sprite = apple;
+            //print("For loop: " + transform.GetChild(i));
+            // GameObject InventorySlot = ItemsParent.transform.GetChild(i).gameObject;
+            GameObject ItemsParent = transform.GetChild(0).gameObject;
+            GameObject InventorySlot = ItemsParent.gameObject.transform.GetChild(i).gameObject;
+            GameObject ItemButton = InventorySlot.gameObject.transform.GetChild(0).gameObject;
+            GameObject placeHolderImage = ItemButton.gameObject.transform.GetChild(0).gameObject;
+            myImageComponent = GetComponent<Image>();
+            
 
-            //inventorySlot.GetComponent<Image>().sprite = "apple";
+            //GameObject ItemsParent = transform.GetChild(0).gameObject;
+            //GameObject InventorySlot = ItemsParent.transform.GetChild(i).gameObject;
+            //GameObject ItemButton = InventorySlot.transform.GetChild(0).gameObject;
+            //GameObject placeHolderImage = ItemButton.transform.GetChild(0).gameObject;
+            print("Items parent?: " + transform.GetChild(0).gameObject);
+            print("InventorySlot?: " + ItemsParent.transform.GetChild(i).gameObject);
+            print("ItemButton?: " + InventorySlot.transform.GetChild(0).gameObject);
+            print("placeHolderImage?: " + ItemButton.transform.GetChild(0).gameObject);
 
+           // placeHolderImage.SetActive(true);   //enables image component
+            placeHolderImage.GetComponent<Image>().enabled = true;  //activating image component
+            //Destroy(placeHolderImage);    //removes image component
+            placeHolderImage.GetComponent<Image>().sprite = image;  //assigns new source image
+
+
+            //gameObject.GetComponent<Image>().sprite = apple;
+            //inventoryImage.GetComponent<Image>().sprite = image;
 
         }
     }
