@@ -24,6 +24,8 @@ public class SpiceUI : MonoBehaviour
     int testTextChain;
     public bool damaged;
     public float damageTimer;
+    public AudioSource sound;
+    public GameObject spice;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +48,9 @@ public class SpiceUI : MonoBehaviour
         spiceFloatBoundariesY = .01f;
         spiceFloatSpeedY = .02f;
         testTextChain = 0;
+
+        spice = GameObject.FindGameObjectWithTag("SpiceUI");
+        sound = spice.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -55,6 +60,7 @@ public class SpiceUI : MonoBehaviour
         if(isTyping)
         {
             TypeOutSpiceText(typeOutText);
+            
         }
 
         if (nextText)
@@ -102,6 +108,7 @@ public class SpiceUI : MonoBehaviour
         if (!isTyping)
         {
             spiceTextMeshPro.text = "";
+            
         }
     }
 
@@ -123,8 +130,10 @@ public class SpiceUI : MonoBehaviour
 
     public void TypeOutSpiceText(string newSpiceText)
     {
+       
         if (time - typeOutTextTimer >= spiceTextSpeed)
         {
+            //sound.Play();
             spiceTextMeshPro.text += newSpiceText.ToCharArray()[typeOutTextIndex];
             typeOutTextIndex++;
             typeOutTextTimer = time;
@@ -132,7 +141,9 @@ public class SpiceUI : MonoBehaviour
         if(newSpiceText.Length <= typeOutTextIndex)
         {
             isTyping = false;
+            //sound.Stop();
         }
+        
     }
 
     public bool CheckSpiceTextLength(string newSpiceText)
