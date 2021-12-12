@@ -10,6 +10,7 @@ public class InventoryManager : Inventory
     bool inventoryOpen = false;
     private Inventory inv;
     public GameObject Honey_Jar_01;
+    public GameObject MilkSm_Choc_Open;
     //public GameObject Cream_Lrg_Open;
     GameObject honeyJar;
 
@@ -38,6 +39,7 @@ public class InventoryManager : Inventory
         //GameObject milk = Instantiate(Cream_Lrg_Open, new Vector3(0, 0, 0), Quaternion.identity);
 
         honeyJar01Prefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<UnityEngine.Object>("Assets/Resources/Honey_Jar_01.prefab"));
+        MilkSm_Choc_Open = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<UnityEngine.Object>("Assets/Resources/MilkSm_Choc_Open.prefab"));
 
     }
 
@@ -81,16 +83,14 @@ public class InventoryManager : Inventory
         //Pick up items and remove from scene
         switch (col.tag)
         {
-            case "CreamLarge":  //GAMETAG == "creamLarge"
-                print("MILK found");    //debug message
-                //assign item to cream object
-                // inv.addNewItem(item);    //add picked up item to inventory (using function from inventory.cs)
-                Destroy(col.gameObject);    //remove item from unity scene
-                break;
             case "Honey_Jar_01":
                 print("HONEY found");
-                //item = honeyJar01Prefab;
                 inv.addNewItem(honeyJar01Prefab);
+                Destroy(col.gameObject);
+                break;
+            case "MilkSm_Choc_Open":
+                print("CHOCOLATE found");
+                inv.addNewItem(MilkSm_Choc_Open);
                 Destroy(col.gameObject);
                 break;
             default:

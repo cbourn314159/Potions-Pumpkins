@@ -57,14 +57,15 @@ public class Inventory : MonoBehaviour
     public void addNewItem(GameObject item)
     {
         print("ADDING ITEM");
-        int children = transform.GetChild(0).childCount;    //currently have # of inventory slots hardcoded
+        int children =  inventoryObject.transform.GetChild(0).childCount;
+        //int children = transform.GetChild(0).childCount;    //currently have # of inventory slots hardcoded
         //accessing children of itemsParent (all inventory slots)
-        for (int i = 0; i < 3 - 1; ++i)
+
+        for (int i = 0; i < children - 1; ++i)
         {
             print("Adding item to inventory");
-            //GameObject inv = inventoryObject.transform.GetChild(0).gameObject;
             GameObject ItemsParent = inventoryObject.transform.GetChild(0).gameObject;
-            GameObject InventorySlot = ItemsParent.gameObject.transform.GetChild(0).gameObject;
+            GameObject InventorySlot = ItemsParent.gameObject.transform.GetChild(i).gameObject;
             GameObject ItemButton = InventorySlot.gameObject.transform.GetChild(0).gameObject;
             GameObject placeHolderImage = ItemButton.gameObject.transform.GetChild(0).gameObject;
             int placeHolderImageChildren = ItemButton.gameObject.transform.GetChild(0).childCount;
