@@ -14,7 +14,7 @@ public class shoot_sound : StateMachineBehaviour
         if (clip != null)
         {
             audio.PlayOneShot(clip, 0.1f);
-}
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
