@@ -61,6 +61,7 @@ public class Inventory : MonoBehaviour
         //accessing children of itemsParent (all inventory slots)
         for (int i = 0; i < 3 - 1; ++i)
         {
+            print("Adding item to inventory");
             //GameObject inv = inventoryObject.transform.GetChild(0).gameObject;
             GameObject ItemsParent = inventoryObject.transform.GetChild(0).gameObject;
             GameObject InventorySlot = ItemsParent.gameObject.transform.GetChild(0).gameObject;
