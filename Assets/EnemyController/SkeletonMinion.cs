@@ -31,7 +31,7 @@ public class SkeletonMinion : MonoBehaviour
         attackRange = 1.75f;
         attackArea = 2;
         aggressiveArea = 10;
-        health = 10;
+        health = 9;
         death = false;
     }
 

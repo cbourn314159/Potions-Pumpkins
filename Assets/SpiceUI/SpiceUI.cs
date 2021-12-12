@@ -75,12 +75,12 @@ public class SpiceUI : MonoBehaviour
                 case 5: ChangeSpiceText("So, you see that friendly boi over there down the hallway. Go say hi. He's very friendly."); break;
                 case 6: ChangeSpiceText("Okay, okay, ya got me. [Left-Click] or hit [Ctrl] to fire an arcane blast and smoke his ass."); break;
                 case 7: ClearSpiceText(); break;
-            }            
+            }
             testTextChain++;
         }
 
         if (Input.GetKeyDown(KeyCode.C) && isTyping == false)
-        {
+        {            
             nextText = true;
         }
         else
@@ -120,6 +120,7 @@ public class SpiceUI : MonoBehaviour
         }
         else
         {
+            sound.Play();
             isTyping = true;
             spiceTextMeshPro.text = "";
             typeOutText = newSpiceText;
@@ -130,10 +131,8 @@ public class SpiceUI : MonoBehaviour
 
     public void TypeOutSpiceText(string newSpiceText)
     {
-       
         if (time - typeOutTextTimer >= spiceTextSpeed)
         {
-            //sound.Play();
             spiceTextMeshPro.text += newSpiceText.ToCharArray()[typeOutTextIndex];
             typeOutTextIndex++;
             typeOutTextTimer = time;
@@ -141,7 +140,7 @@ public class SpiceUI : MonoBehaviour
         if(newSpiceText.Length <= typeOutTextIndex)
         {
             isTyping = false;
-            //sound.Stop();
+            sound.Stop();
         }
         
     }
