@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
 
     public GameObject impactFX;
-
+ 
     private bool collided;
     void OnCollisionEnter(Collision co)
     {
