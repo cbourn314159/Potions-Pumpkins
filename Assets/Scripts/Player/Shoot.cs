@@ -90,7 +90,7 @@ public class Shoot : MonoBehaviour
         var projectileObj = Instantiate(projectile, firePoint.position, Quaternion.identity) as GameObject;
         projectileObj.GetComponent<Rigidbody>().velocity = (destination - firePoint.position).normalized * projectileSpeed;
 
-        iTween.PunchPosition(projectileObj, new Vector3(Random.Range(-arcRange, arcRange), Random.Range(-arcRange, arcRange), 0),Random.Range(0.5f, 2));
+       // iTween.PunchPosition(projectileObj, new Vector3(Random.Range(-arcRange, arcRange), Random.Range(-arcRange, arcRange), 0),Random.Range(0.5f, 2));
         var muzzle = Instantiate(muzzleFX, firePoint.position, Quaternion.identity) as GameObject;
         Destroy(muzzle, 2);
     }

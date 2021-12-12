@@ -601,6 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childObj: {fileID: 0}
+  inventoryObject: {fileID: 0}
 --- !u!1 &3577617485109470268
 GameObject:
   m_ObjectHideFlags: 0

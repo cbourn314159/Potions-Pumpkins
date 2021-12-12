@@ -10,6 +10,9 @@ TagManager:
   - SkeletonMinion
   - Bullet
   - CreamLarge
+  - milkLarge
+  - honeyJar
+  - Honey_Jar_01
   layers:
   - Default
   - TransparentFX

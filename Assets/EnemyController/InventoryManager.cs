@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using UnityEngine.UI;
 using System;
 
 public class InventoryManager : Inventory
 {
     bool inventoryOpen = false;
     private Inventory inv;
-    //public GameObject Honey_Jar_01;
+    public GameObject Honey_Jar_01;
     //public GameObject Cream_Lrg_Open;
-
+    GameObject honeyJar;
 
 
     //Inventory.GetComponent<Image>().sprite = image;  //assigns new source image
@@ -18,21 +20,24 @@ public class InventoryManager : Inventory
     //public GameObject honey;
     //public GameObject milk;
     GameObject item;
+    //GameObject honeyJar01Prefab;
 
     public List<GameObject> targetList;
+    GameObject honeyJar01Prefab;
 
 
     public GameObject inventoryPrefab;
     // Start is called before the first frame update
     void Start()
     {
+
         targetList = new List<GameObject>(Resources.LoadAll<GameObject>("Resources"));
         //item = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
-
 
         //GameObject honey = Instantiate(Honey_Jar_01, new Vector3(0, 0, 0), Quaternion.identity);
         //GameObject milk = Instantiate(Cream_Lrg_Open, new Vector3(0, 0, 0), Quaternion.identity);
 
+        honeyJar01Prefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<UnityEngine.Object>("Assets/Resources/Honey_Jar_01.prefab"));
 
     }
 
@@ -76,20 +81,20 @@ public class InventoryManager : Inventory
         //Pick up items and remove from scene
         switch (col.tag)
         {
-            case "milkLarge":
-                //item = milk;
-                print("MILK found");
-                // inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
+            case "CreamLarge":  //GAMETAG == "creamLarge"
+                print("MILK found");    //debug message
+                //assign item to cream object
+                // inv.addNewItem(item);    //add picked up item to inventory (using function from inventory.cs)
                 Destroy(col.gameObject);    //remove item from unity scene
                 break;
-            case "honeyJar":
-                // item = honey;
+            case "Honey_Jar_01":
                 print("HONEY found");
-                // inv.addNewItem(item);    //add picked up item to inventory (inventory.cs)
+                //item = honeyJar01Prefab;
+                inv.addNewItem(honeyJar01Prefab);
                 Destroy(col.gameObject);
                 break;
             default:
-                print("NO");
+                print("NOTHING FOUND");
                 break;
         }
     }
