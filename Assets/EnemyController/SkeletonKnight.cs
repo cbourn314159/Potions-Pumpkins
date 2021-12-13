@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SkeletonMinion : MonoBehaviour
+public class SkeletonKnight : MonoBehaviour
 {
     public GameObject player;
     public GameObject spiceUI;
-    public GameObject cream;
+    //public GameObject cream;
     public Animator animator;
     public float walkSpeed;
     public float attackRange;
     public float attackArea;
     public float aggressiveArea;
+    public float shieldArea;
     public float health;
     public bool death;
     public float distanceToPlayer;
@@ -25,13 +26,14 @@ public class SkeletonMinion : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         spiceUI = GameObject.FindGameObjectWithTag("SpiceUI");
-        cream = GameObject.FindGameObjectWithTag("CreamLarge");
-        cream.SetActive(false);
-        walkSpeed = 2.5f;
-        attackRange = 2f;
-        attackArea = 3;
-        aggressiveArea = 10;
-        health = 5;
+        //cream = GameObject.FindGameObjectWithTag("CreamLarge");
+        //cream.SetActive(false);
+        walkSpeed = 3.5f;
+        attackRange = 2.5f;
+        attackArea = 2.5f;
+        aggressiveArea = 7.5f;
+        shieldArea = 25;
+        health = 10;
         death = false;
     }
 
@@ -43,9 +45,12 @@ public class SkeletonMinion : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Bullet") 
+        if (col.gameObject.tag == "Bullet")
         {
-            health -= wandDamage;
+            if (!animator.GetBool("Shield"))
+            {
+                health -= wandDamage;
+            }
         }
     }
 
@@ -56,6 +61,7 @@ public class SkeletonMinion : MonoBehaviour
         if (animator.GetBool("AttackHit") && distanceToPlayer < attackRange)
         {
             spiceUI.GetComponent<SpiceUI>().damaged = true;
+            print("Hit");
         }
 
         ResetAnimationStates();
@@ -63,24 +69,31 @@ public class SkeletonMinion : MonoBehaviour
         if (health <= 0 && death == false)
         {
             death = true;
-            cream.transform.position = transform.position;
-            cream.SetActive(true);
+            //cream.transform.position = transform.position;
+            //cream.SetActive(true);
+            spiceUI.GetComponent<SpiceUI>().ChangeSpiceText("Wow. Surprised that you won. Congrats, I guess... The End. Go home. Seriously, you can leave now.");
             animator.SetBool("Defeat", true);
         }
 
         if (distanceToPlayer < attackArea && death == false)
         {
-            walkSpeed = 1.5f;
+            walkSpeed = 1f;
             MoveToPlayer();
             animator.SetBool("Attack", true);
         }
         else if (distanceToPlayer < aggressiveArea && death == false)
         {
-            walkSpeed = 2.5f;
+            walkSpeed = 4f;
             MoveToPlayer();
             animator.SetBool("Run", true);
         }
-        else if (death == false)
+        else if (distanceToPlayer < shieldArea && death == false)
+        {
+            walkSpeed = 0f;
+            MoveToPlayer();
+            animator.SetBool("Shield", true);
+        }
+        else if (health != 0)
         {
             animator.SetBool("Idle", true);
         }
@@ -98,6 +111,7 @@ public class SkeletonMinion : MonoBehaviour
         animator.SetBool("Attack", false);
         animator.SetBool("Run", false);
         animator.SetBool("Idle", false);
+        animator.SetBool("Shield", false);
         animator.SetBool("AttackHit", false);
     }
 }

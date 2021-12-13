@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class SpiceUI : MonoBehaviour
 {
     public GameObject spiceCharacter;
     public GameObject spiceText;
+    GameObject witchHat1;
+    GameObject witchHat2;
+    GameObject witchHat3;
     public TMP_Text spiceTextMeshPro;
     public Vector3 characterPositionCenter;
     public Quaternion characterRotationCenter;
@@ -23,6 +27,7 @@ public class SpiceUI : MonoBehaviour
     public float spiceFloatSpeedY;
     int testTextChain;
     public bool damaged;
+    public int health;
     public float damageTimer;
     public AudioSource sound;
     public GameObject spice;
@@ -38,11 +43,16 @@ public class SpiceUI : MonoBehaviour
         characterPositionCenter = Camera.main.WorldToViewportPoint(spiceCharacter.transform.position);
         characterRotationCenter = spiceCharacter.transform.rotation;
 
+        witchHat1 = GameObject.FindGameObjectsWithTag("WitchHat")[2];
+        witchHat2 = GameObject.FindGameObjectsWithTag("WitchHat")[1];
+        witchHat3 = GameObject.FindGameObjectsWithTag("WitchHat")[0];
+
         time = 0;
         isTyping = false;
         nextText = true;
         floatUp = true;
         damaged = false;
+        health = 3;
 
         spiceTextSpeed = .025f;
         spiceFloatBoundariesY = .01f;
@@ -78,6 +88,7 @@ public class SpiceUI : MonoBehaviour
             }
             testTextChain++;
         }
+        //spiceUI.GetComponent<SpiceUI>().ChangeSpiceText("Wow. Surprised that you won. Congrats, I guess... The End. Go home. Seriously, you can leave now.");
 
         if (Input.GetKeyDown(KeyCode.C) && isTyping == false)
         {            
@@ -88,8 +99,48 @@ public class SpiceUI : MonoBehaviour
             nextText = false;
         }
 
+        DamageScreen();
+
+        HealthScreen();
+
+        SpiceFloatingMovement();
+    }
+
+    public void HealthScreen()
+    {
+        switch (health)
+        {
+            case 3:
+                witchHat3.SetActive(true);
+                witchHat2.SetActive(true);
+                witchHat1.SetActive(true);
+                break;
+            case 2:
+                witchHat3.SetActive(false);
+                witchHat2.SetActive(true);
+                witchHat1.SetActive(true);
+                break;
+            case 1:
+                witchHat3.SetActive(false);
+                witchHat2.SetActive(false);
+                witchHat1.SetActive(true);
+                break;
+            default:
+                witchHat3.SetActive(false);
+                witchHat2.SetActive(false);
+                witchHat1.SetActive(false);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                SceneManager.LoadScene("Main Menu");
+                break;
+        }
+    }
+
+    public void DamageScreen()
+    {
         if (damaged == true)
         {
+            health -= 1;
             damageTimer = 0;
             damaged = false;
             GetComponent<Image>().enabled = true;
@@ -99,8 +150,6 @@ public class SpiceUI : MonoBehaviour
         {
             GetComponent<Image>().enabled = false;
         }
-
-        SpiceFloatingMovement();
     }
 
     public void ClearSpiceText()
