@@ -8,7 +8,6 @@ public class SkeletonMinion : MonoBehaviour
     public GameObject player;
     public GameObject spiceUI;
     public GameObject cream;
-    public GameObject skeleton;
     public Animator animator;
     public float walkSpeed;
     public float attackRange;
@@ -29,7 +28,6 @@ public class SkeletonMinion : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         spiceUI = GameObject.FindGameObjectWithTag("SpiceUI");
         cream = GameObject.FindGameObjectWithTag("CreamLarge");
-        skeleton = GameObject.FindGameObjectWithTag("SkeletonMinion");
         cream.SetActive(false);
         walkSpeed = 3;
         attackRange = 1.75f;
