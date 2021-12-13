@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackHit : StateMachineBehaviour
+public class SwordHit : StateMachineBehaviour
 {
     public float time;
     public float attackDamageDelayTimer;
@@ -13,7 +13,7 @@ public class AttackHit : StateMachineBehaviour
     {
         time = 0;
         attackDamageDelayTimer = time;
-        delayTime = .3f;
+        delayTime = .35f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -30,7 +30,7 @@ public class AttackHit : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
-    //    animator.SetBool("AttackHit",true);
+    //
     //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
