@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour
     public Camera cam;
     public GameObject projectile;
     public GameObject muzzleFX;
+    public GameObject player;
     public Transform LHfirePoint, RHfirePoint;
     public GameObject wand;
 
@@ -20,11 +21,16 @@ public class Shoot : MonoBehaviour
     private bool leftHand;
     private float timeToFire;
     private Animator anim;
+    public AudioSource audio;
+    public AudioClip clip;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         anim = wand.GetComponent<Animator>();
+        audio = player.GetComponent<AudioSource>();
+        clip = (AudioClip)Resources.Load("blast");
     }
 
     // Update is called once per frame
@@ -82,7 +88,7 @@ public class Shoot : MonoBehaviour
         }
 
         InstantiateProjectile(LHfirePoint);
-   
+
     }
     
     void InstantiateProjectile(Transform firePoint) 
@@ -93,6 +99,12 @@ public class Shoot : MonoBehaviour
         iTween.PunchPosition(projectileObj, new Vector3(Random.Range(-arcRange, arcRange), Random.Range(-arcRange, arcRange), 0),Random.Range(0.5f, 2));
         var muzzle = Instantiate(muzzleFX, firePoint.position, Quaternion.identity) as GameObject;
         Destroy(muzzle, 2);
+
+        if (clip != null)
+        {
+            audio.PlayOneShot(clip, 0.1f);
+        }
+
     }
 
 }

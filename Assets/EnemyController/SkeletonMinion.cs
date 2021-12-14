@@ -18,6 +18,7 @@ public class SkeletonMinion : MonoBehaviour
     public float distanceToPlayer;
     public AudioSource audio;
     public AudioClip clip;
+    public AudioClip clip2;
 
     [Header("Damage Taken")]
     public int wandDamage = 1;
@@ -38,7 +39,7 @@ public class SkeletonMinion : MonoBehaviour
 
         audio = player.GetComponent<AudioSource>();
         clip = (AudioClip)Resources.Load("grunt");
-
+        clip2 = (AudioClip)Resources.Load("dying");
     }
 
     // Update is called once per frame
@@ -52,7 +53,7 @@ public class SkeletonMinion : MonoBehaviour
         if (col.gameObject.tag == "Bullet") 
         {
             health -= wandDamage;
-            if (clip != null)
+            if (clip != null && health > 0)
             {
                 audio.PlayOneShot(clip, 0.1f);
             }
@@ -77,6 +78,10 @@ public class SkeletonMinion : MonoBehaviour
             cream.transform.position = transform.position;
             cream.SetActive(true);
             animator.SetBool("Defeat", true);
+            if (clip != null)
+            {
+                audio.PlayOneShot(clip2, 0.1f);
+            }
         }
 
         if (distanceToPlayer < attackArea && death == false)
