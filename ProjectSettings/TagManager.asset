@@ -20,6 +20,10 @@ TagManager:
   - WitchHat3
   - WitchHat4
   - WitchHat5
+  - Pumpkin
+  - Skull
+  - SkullPuzzleSquare
+  - PumpkinPuzzleSquare
   layers:
   - Default
   - TransparentFX
