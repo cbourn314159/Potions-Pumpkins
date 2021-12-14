@@ -12,6 +12,8 @@ public class SpiceUI : MonoBehaviour
     GameObject witchHat1;
     GameObject witchHat2;
     GameObject witchHat3;
+    GameObject witchHat4;
+    GameObject witchHat5;
     public TMP_Text spiceTextMeshPro;
     public Vector3 characterPositionCenter;
     public Quaternion characterRotationCenter;
@@ -43,16 +45,18 @@ public class SpiceUI : MonoBehaviour
         characterPositionCenter = Camera.main.WorldToViewportPoint(spiceCharacter.transform.position);
         characterRotationCenter = spiceCharacter.transform.rotation;
 
-        witchHat1 = GameObject.FindGameObjectsWithTag("WitchHat")[2];
-        witchHat2 = GameObject.FindGameObjectsWithTag("WitchHat")[1];
-        witchHat3 = GameObject.FindGameObjectsWithTag("WitchHat")[0];
+        witchHat1 = GameObject.FindGameObjectWithTag("WitchHat1");
+        witchHat2 = GameObject.FindGameObjectWithTag("WitchHat2");
+        witchHat3 = GameObject.FindGameObjectWithTag("WitchHat3");
+        witchHat4 = GameObject.FindGameObjectWithTag("WitchHat4");
+        witchHat5 = GameObject.FindGameObjectWithTag("WitchHat5");
 
         time = 0;
         isTyping = false;
         nextText = true;
         floatUp = true;
         damaged = false;
-        health = 3;
+        health = 5;
 
         spiceTextSpeed = .025f;
         spiceFloatBoundariesY = .01f;
@@ -110,22 +114,44 @@ public class SpiceUI : MonoBehaviour
     {
         switch (health)
         {
+            case 5:
+                witchHat5.SetActive(true);
+                witchHat4.SetActive(true);
+                witchHat3.SetActive(true);
+                witchHat2.SetActive(true);
+                witchHat1.SetActive(true);
+                break;
+            case 4:
+                witchHat5.SetActive(false);
+                witchHat4.SetActive(true);
+                witchHat3.SetActive(true);
+                witchHat2.SetActive(true);
+                witchHat1.SetActive(true);
+                break;
             case 3:
+                witchHat5.SetActive(false);
+                witchHat4.SetActive(false);
                 witchHat3.SetActive(true);
                 witchHat2.SetActive(true);
                 witchHat1.SetActive(true);
                 break;
             case 2:
+                witchHat5.SetActive(false);
+                witchHat4.SetActive(false);
                 witchHat3.SetActive(false);
                 witchHat2.SetActive(true);
                 witchHat1.SetActive(true);
                 break;
             case 1:
+                witchHat5.SetActive(false);
+                witchHat4.SetActive(false);
                 witchHat3.SetActive(false);
                 witchHat2.SetActive(false);
                 witchHat1.SetActive(true);
                 break;
             default:
+                witchHat5.SetActive(false);
+                witchHat4.SetActive(false);
                 witchHat3.SetActive(false);
                 witchHat2.SetActive(false);
                 witchHat1.SetActive(false);

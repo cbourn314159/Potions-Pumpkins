@@ -14,7 +14,12 @@ TagManager:
   - honeyJar
   - Honey_Jar_01
   - MilkSm_Choc_Open
-  - WitchHat
+  - Arrow
+  - WitchHat1
+  - WitchHat2
+  - WitchHat3
+  - WitchHat4
+  - WitchHat5
   layers:
   - Default
   - TransparentFX
