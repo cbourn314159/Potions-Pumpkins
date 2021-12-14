@@ -32,8 +32,8 @@ public class SkeletonMinion : MonoBehaviour
         cream.SetActive(false);
         walkSpeed = 2.5f;
         attackRange = 2f;
-        attackArea = 3;
-        aggressiveArea = 10;
+        attackArea = 2f;
+        aggressiveArea = 20;
         health = 5;
         death = false;
 
@@ -86,13 +86,13 @@ public class SkeletonMinion : MonoBehaviour
 
         if (distanceToPlayer < attackArea && death == false)
         {
-            walkSpeed = 1.5f;
+            walkSpeed = 2.5f;
             MoveToPlayer();
             animator.SetBool("Attack", true);
         }
         else if (distanceToPlayer < aggressiveArea && death == false)
         {
-            walkSpeed = 2.5f;
+            walkSpeed = 5f;
             MoveToPlayer();
             animator.SetBool("Run", true);
         }

@@ -13,7 +13,7 @@ public class AttackHit : StateMachineBehaviour
     {
         time = 0;
         attackDamageDelayTimer = time;
-        delayTime = .3f;
+        delayTime = .5f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

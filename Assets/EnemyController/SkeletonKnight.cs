@@ -29,8 +29,8 @@ public class SkeletonKnight : MonoBehaviour
         //cream = GameObject.FindGameObjectWithTag("CreamLarge");
         //cream.SetActive(false);
         walkSpeed = 3.5f;
-        attackRange = 2.5f;
-        attackArea = 2.5f;
+        attackRange = 4f;
+        attackArea = 3f;
         aggressiveArea = 7.5f;
         shieldArea = 25;
         health = 10;
@@ -61,7 +61,6 @@ public class SkeletonKnight : MonoBehaviour
         if (animator.GetBool("AttackHit") && distanceToPlayer < attackRange)
         {
             spiceUI.GetComponent<SpiceUI>().damaged = true;
-            print("Hit");
         }
 
         ResetAnimationStates();
