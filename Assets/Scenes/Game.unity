@@ -17843,10 +17843,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3577617484112154444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d97aa42f84a3da944bd0e23b22dcf688, type: 3}
+  m_Script: {fileID: 11500000, guid: d3a059166428a3141866110ccf4ea702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryObject: {fileID: 0}
+  inventoryObject: {fileID: 3577617484939982118, guid: 241b3390f47032447abddda9b5750d51, type: 3}
   audio: {fileID: 0}
   clip: {fileID: 0}
 --- !u!1 &1489997244
@@ -41154,14 +41154,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6857551954918880708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d67032e2f857f04e9dd7e8d14150556, type: 3}
+  m_Script: {fileID: 11500000, guid: b89f897662c34c44d814d5b2838b56a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryObject: {fileID: 3577617484112154444}
   audio: {fileID: 0}
   clip: {fileID: 0}
-  Honey_Jar_01: {fileID: 0}
-  MilkSm_Choc_Open: {fileID: 0}
+  Honey_Jar_01: {fileID: 303668796101528057, guid: 356669b4e38304145b03e9660c5a6ce9, type: 3}
+  MilkSm_Choc_Open: {fileID: 7245194367601918637, guid: 7988398fdb25ffd41893ccb576329237, type: 3}
   inventoryPrefab: {fileID: 3577617484112154444}
 --- !u!114 &1198680172096443264
 MonoBehaviour:
@@ -81441,7 +81441,7 @@ MeshCollider:
   m_GameObject: {fileID: 1357759041019286580}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -87990,7 +87990,7 @@ MeshCollider:
   m_GameObject: {fileID: 6052074829088646236}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -99229,7 +99229,7 @@ MeshCollider:
   m_GameObject: {fileID: 9027505219194576250}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -109861,7 +109861,7 @@ MeshCollider:
   m_GameObject: {fileID: 5796984877895888630}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
