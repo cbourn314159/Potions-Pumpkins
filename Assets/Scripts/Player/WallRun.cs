@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class WallRun : MonoBehaviour
 {
+    public GameObject head;
 
     [Header("Movement")]
     [SerializeField] Transform orientation;
+    public bool wallRunning = false;
 
     [Header("Detection")]
     [SerializeField] float wallDistance = .5f;
@@ -25,9 +27,14 @@ public class WallRun : MonoBehaviour
     private Rigidbody rb;
     private Transform initialRotation;
 
+    Animator anim;
+    PlayerMovement pMove;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = head.GetComponent<Animator>();
+        pMove = GetComponent<PlayerMovement>(); 
     }
 
     bool CanWallRun() 
@@ -39,6 +46,11 @@ public class WallRun : MonoBehaviour
     {
         wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance);
         wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance);
+
+        if (!wallLeft || !wallRight) 
+        {
+            anim.SetTrigger("Idle");
+        }
     }
 
     void Update()
@@ -49,19 +61,29 @@ public class WallRun : MonoBehaviour
         {
             if (wallLeft)
             {
+                wallRunning = true;
                 StartWallRun();
-                Debug.Log("wall running on left");
+                anim.SetBool("isLWallRun", true);
             }
 
             else if (wallRight)
             {
+                wallRunning = true;
                 StartWallRun();
-                Debug.Log("wall running on Right");
+                anim.SetBool("isRWallRun", true);
             }
             else 
             {
                 StopWallRun();
+                anim.SetBool("isLWallRun", false);
+                anim.SetBool("isRWallRun", false);
+                anim.SetTrigger("Idle");
             }
+        }
+        if (pMove.isGrounded == true) 
+        {
+            anim.SetBool("isLWallRun", false);
+            anim.SetBool("isRWallRun", false);
         }
     }
 

@@ -23,7 +23,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 20, y: 130, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ExitPosition: {x: 570, y: 10, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -2470703661393467665}
 --- !u!114 &-7213001726048496027
@@ -39,7 +39,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  sound: {fileID: 0}
 --- !u!1109 &-7162731561436616245
 AnimatorTransition:
   m_ObjectHideFlags: 1
