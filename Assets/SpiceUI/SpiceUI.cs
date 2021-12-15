@@ -32,6 +32,7 @@ public class SpiceUI : MonoBehaviour
     public int health;
     public float damageTimer;
     public AudioSource sound;
+    public AudioClip clip;
     public GameObject spice;
 
     // Start is called before the first frame update
@@ -65,6 +66,7 @@ public class SpiceUI : MonoBehaviour
 
         spice = GameObject.FindGameObjectWithTag("SpiceUI");
         sound = spice.GetComponent<AudioSource>();
+        clip = (AudioClip)Resources.Load("dying_player");
     }
 
     // Update is called once per frame
@@ -167,6 +169,10 @@ public class SpiceUI : MonoBehaviour
         if (damaged == true)
         {
             health -= 1;
+            if (clip != null && health == 0)
+            {
+                sound.PlayOneShot(clip, 0.5f);
+            }
             damageTimer = 0;
             damaged = false;
             GetComponent<Image>().enabled = true;

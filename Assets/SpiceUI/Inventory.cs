@@ -11,6 +11,8 @@ public class Inventory : MonoBehaviour
 
     //public GameObject childObj;
     public GameObject inventoryObject;
+    public AudioSource audio;
+    public AudioClip clip;
 
 
     void Start()
@@ -18,6 +20,8 @@ public class Inventory : MonoBehaviour
 
         // addNewItem(item);
         GameObject inventoryObject = GameObject.Find("Inventory");
+        audio = inventoryObject.GetComponent<AudioSource>();
+        clip = (AudioClip)Resources.Load("pop_sound");
     }
 
     private void Update()
@@ -37,7 +41,10 @@ public class Inventory : MonoBehaviour
     {
         print("ADDING ITEM");
         int children =  inventoryObject.transform.GetChild(0).childCount;
-
+        if (clip != null)
+        {
+            audio.PlayOneShot(clip, 0.1f);
+        }
 
         for (int i = 0; i < children - 1; ++i)
         {
