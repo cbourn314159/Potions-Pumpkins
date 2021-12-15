@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour
     //Add found items to inventory slots
     public void addNewItem(GameObject item)
     {
-        print("ADDING ITEM");
+        //print("ADDING ITEM");
         int children =  inventoryObject.transform.GetChild(0).childCount;
         if (clip != null)
         {
@@ -48,7 +48,7 @@ public class Inventory : MonoBehaviour
 
         for (int i = 0; i < children - 1; ++i)
         {
-            print("Adding item to inventory");
+            //print("Adding item to inventory");
             GameObject ItemsParent = inventoryObject.transform.GetChild(0).gameObject;
             GameObject InventorySlot = ItemsParent.gameObject.transform.GetChild(i).gameObject;
             GameObject ItemButton = InventorySlot.gameObject.transform.GetChild(0).gameObject;
@@ -67,7 +67,7 @@ public class Inventory : MonoBehaviour
                 // go.transform.SetParent(fCanvas.transform);
 
 
-                print("no children found here");
+                //print("no children found here");
                 //if empty, add item here and break
                 //additem
 
@@ -76,7 +76,7 @@ public class Inventory : MonoBehaviour
             }
             else
             {
-                print(" child found here");
+                //print(" child found here");
 
             }
 

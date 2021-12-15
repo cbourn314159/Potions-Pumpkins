@@ -50,7 +50,7 @@ public class InventoryManager : Inventory
 
 
                 inventoryOpen = true;
-                print("inventory opened");
+                //print("inventory opened");
             }
             else
             {
@@ -58,7 +58,7 @@ public class InventoryManager : Inventory
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 inventoryOpen = false;
-                print("inventory closed");
+                //print("inventory closed");
             }
         }
 
@@ -72,15 +72,15 @@ public class InventoryManager : Inventory
         switch (col.gameObject.tag)
         {
             case "Honey_Jar_01":
-                print("HONEY found");
+                //print("HONEY found");
                 inv.addNewItem(col.gameObject);
                 break;
             case "MilkSm_Choc_Open":
-                print("CHOCOLATE found");
+                //print("CHOCOLATE found");
                 inv.addNewItem(col.gameObject);
                 break;
             default:
-                print("NOTHING FOUND");
+                //print("NOTHING FOUND");
                 break;
         }
     }
