@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6378830958431702754}
   - component: {fileID: 2047001809170640808}
   - component: {fileID: 4117526506445954048}
+  - component: {fileID: -5324806225124196903}
   m_Layer: 0
   m_Name: MilkSm_Choc_Open
-  m_TagString: Untagged
+  m_TagString: MilkSm_Choc_Open
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +94,22 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 900077c436451f945bfa35a55af9ffc9, type: 3}
+--- !u!54 &-5324806225124196903
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245194367601918637}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
