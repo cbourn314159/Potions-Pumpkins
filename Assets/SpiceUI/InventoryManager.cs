@@ -10,26 +10,20 @@ public class InventoryManager : Inventory
     bool inventoryOpen = false;
     private Inventory inv;
     public GameObject Honey_Jar_01;
-    public GameObject MilkSm_Choc_Open;
-    GameObject honeyJar;
-
-    GameObject item;
-
-    //public List<GameObject> targetList;
-    GameObject honeyJar01Prefab;
+    public GameObject MilkSm_Choc_Open; 
+    public GameObject Coffee_Bags_v1_01;
+    public GameObject MilkLrg_Whole_Closed;
+    public GameObject Cream_Sm_Open; 
+    public GameObject TeaTin_Raspberry;
+    public GameObject Coffee_Bags_v5_03;
 
 
     public GameObject inventoryPrefab;
     // Start is called before the first frame update
     void Start()
     {
-
-        //targetList = new List<GameObject>(Resources.LoadAll<GameObject>("Resources"));
         inventoryPrefab = GameObject.FindGameObjectWithTag("Inventory");
         inventoryPrefab.gameObject.SetActive(false);
-        honeyJar01Prefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<UnityEngine.Object>("Assets/Resources/Honey_Jar_01.prefab"));
-        MilkSm_Choc_Open = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<UnityEngine.Object>("Assets/Resources/MilkSm_Choc_Open.prefab"));
-
     }
 
     private void Awake()
@@ -77,6 +71,26 @@ public class InventoryManager : Inventory
                 break;
             case "MilkSm_Choc_Open":
                 //print("CHOCOLATE found");
+                inv.addNewItem(col.gameObject);
+                break;
+            case "Coffee_Bags_v1_01":
+                //print("COFFEE BEANS found");
+                inv.addNewItem(col.gameObject);
+                break;
+            case "MilkLrg_Whole_Closed":
+                //print("HONEY found");
+                inv.addNewItem(col.gameObject);
+                break;
+            case "Cream_Sm_Open":
+                //print("CHOCOLATE found");
+                inv.addNewItem(col.gameObject);
+                break;
+            case "TeaTin_Raspberry":
+                //print("COFFEE BEANS found");
+                inv.addNewItem(col.gameObject);
+                break;
+            case "Coffee_Bags_v5_03":
+                //print("COFFEE BEANS found");
                 inv.addNewItem(col.gameObject);
                 break;
             default:
