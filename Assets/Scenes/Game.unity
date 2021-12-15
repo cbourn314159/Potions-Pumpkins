@@ -10684,7 +10684,7 @@ RectTransform:
   m_Children:
   - {fileID: 1028805342}
   m_Father: {fileID: 3577617484112154443}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -41734,6 +41734,7 @@ MonoBehaviour:
   Cream_Sm_Open: {fileID: 7245194367601918637, guid: b21466a9b1819a341b1cfb79a89294d1, type: 3}
   TeaTin_Raspberry: {fileID: 8138896976272458431, guid: 64da303e5e577af4580dcbabaa4df334, type: 3}
   Coffee_Bags_v5_03: {fileID: 0}
+  testPotion: {fileID: 3571786719479930894, guid: 3cb0c181c11d52f48a3747b4236b8f81, type: 3}
   inventoryPrefab: {fileID: 3577617484112154444}
 --- !u!114 &1198680172096443264
 MonoBehaviour:
@@ -66283,10 +66284,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3577617484209233493}
-  - {fileID: 865393834}
-  - {fileID: 7890718814162431492}
-  - {fileID: 4990980234993511562}
   - {fileID: 7395096042262637579}
+  - {fileID: 4990980234993511562}
+  - {fileID: 7890718814162431492}
+  - {fileID: 865393834}
   - {fileID: 867564853}
   - {fileID: 3577617485694277681}
   m_Father: {fileID: 467990078}
@@ -80334,7 +80335,7 @@ RectTransform:
   m_Children:
   - {fileID: 4990980235967323095}
   m_Father: {fileID: 3577617484112154443}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -99217,7 +99218,7 @@ RectTransform:
   m_Children:
   - {fileID: 7395096041490307926}
   m_Father: {fileID: 3577617484112154443}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -107927,7 +107928,7 @@ RectTransform:
   m_Children:
   - {fileID: 7890718813459568985}
   m_Father: {fileID: 3577617484112154443}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
