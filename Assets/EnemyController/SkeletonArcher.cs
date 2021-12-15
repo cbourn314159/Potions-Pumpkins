@@ -8,7 +8,7 @@ public class SkeletonArcher : MonoBehaviour
     public GameObject player;
     public GameObject spiceUI;
     public GameObject arrow;
-    //public GameObject cream;
+    public GameObject itemDrop;
     public Animator animator;
     public float walkSpeed;
     public float fleeArea;
@@ -17,6 +17,9 @@ public class SkeletonArcher : MonoBehaviour
     public float health;
     public bool death;
     public float distanceToPlayer;
+    public AudioSource audio;
+    public AudioClip clip;
+    public AudioClip clip2;
 
     [Header("Damage Taken")]
     public int wandDamage = 1;
@@ -34,6 +37,10 @@ public class SkeletonArcher : MonoBehaviour
         towardsArea = 30;
         health = 3;
         death = false;
+
+        audio = player.GetComponent<AudioSource>();
+        clip = (AudioClip)Resources.Load("grunt");
+        clip2 = (AudioClip)Resources.Load("dying");
     }
 
     // Update is called once per frame
@@ -47,6 +54,10 @@ public class SkeletonArcher : MonoBehaviour
         if (col.gameObject.tag == "Bullet")
         {
             health -= wandDamage;
+            if (clip != null && health > 0)
+            {
+                audio.PlayOneShot(clip, 0.1f);
+            }
         }
     }
 
@@ -65,10 +76,14 @@ public class SkeletonArcher : MonoBehaviour
         if (health <= 0 && death == false)
         {
             death = true;
-            //cream.transform.position = transform.position;
-            //cream.SetActive(true);
-            spiceUI.GetComponent<SpiceUI>().ChangeSpiceText("Wow. Surprised that you won. Congrats, I guess... The End. Go home. Seriously, you can leave now.");
+            itemDrop.transform.position = transform.position;
+            Instantiate(itemDrop);
+            //spiceUI.GetComponent<SpiceUI>().ChangeSpiceText("Wow. Surprised that you won. Congrats, I guess... The End. Go home. Seriously, you can leave now.");
             animator.SetBool("Defeat", true);
+            if (clip != null)
+            {
+                audio.PlayOneShot(clip2, 0.1f);
+            }
         }
 
         if (distanceToPlayer < fleeArea && death == false)

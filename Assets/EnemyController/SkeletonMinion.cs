@@ -7,7 +7,7 @@ public class SkeletonMinion : MonoBehaviour
 {
     public GameObject player;
     public GameObject spiceUI;
-    public GameObject honey;
+    public GameObject itemDrop;
     public Animator animator;
     public float walkSpeed;
     public float attackRange;
@@ -73,13 +73,14 @@ public class SkeletonMinion : MonoBehaviour
         if (health <= 0 && death == false)
         {
             death = true;
-            honey.transform.position = transform.position;
-            Instantiate(honey);
+            itemDrop.transform.position = transform.position;
+            Instantiate(itemDrop);
             animator.SetBool("Defeat", true);
             if (clip != null)
             {
                 audio.PlayOneShot(clip2, 0.1f);
             }
+            
         }
 
         if (distanceToPlayer < attackArea && death == false)

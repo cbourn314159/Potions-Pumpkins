@@ -1848,7 +1848,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: db4f9b38082b3284fae4e9d5a751c5d8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.097
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1996,10 +1996,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryObject: {fileID: 1408032978953613088, guid: 5b743b70cfb0b294182c0075c11454d7, type: 3}
-  audio: {fileID: 0}
   clip: {fileID: 8300000, guid: cefc8ae426113574889e9ba1729b8ad7, type: 3}
   Honey_Jar_01: {fileID: 0}
   MilkSm_Choc_Open: {fileID: 0}
+  Coffee_Bags_v1_01: {fileID: 0}
+  MilkLrg_Whole_Closed: {fileID: 0}
+  Cream_Sm_Open: {fileID: 0}
+  TeaTin_Raspberry: {fileID: 0}
+  Coffee_Bags_v5_03: {fileID: 0}
   inventoryPrefab: {fileID: 1408032978953613088, guid: 5b743b70cfb0b294182c0075c11454d7, type: 3}
 --- !u!1 &8624697333885865465
 GameObject:

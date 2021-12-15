@@ -75,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
         sound = GetComponent<AudioSource>();
         anim = head.GetComponent<Animator>();
+        float groundDrag = 1f;
     }
     // Update is called once per frame
     void Update()

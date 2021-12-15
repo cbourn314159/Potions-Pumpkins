@@ -6,20 +6,37 @@ public class PumpkinPuzzleSquare : MonoBehaviour
 {
     public bool pumpkinOnSquare;
     public GameObject skullPuzzleSquare;
+    public GameObject itemDrop;
+
+    public float time;
+    public float puzzleTimer;
+    public float delayTime;
 
     // Start is called before the first frame update
     void Start()
     {
         pumpkinOnSquare = false;
         skullPuzzleSquare = GameObject.FindGameObjectWithTag("SkullPuzzleSquare");
+        time = 0;
+        delayTime = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(skullPuzzleSquare.GetComponent<SkullPuzzleSquare>().skullOnSquare && pumpkinOnSquare)
+        time += Time.deltaTime;
+
+        if (skullPuzzleSquare.GetComponent<SkullPuzzleSquare>().skullOnSquare && pumpkinOnSquare)
         {
-            print("Puzzle Solved!");
+            if (time - puzzleTimer >= delayTime)
+            {
+                itemDrop.transform.position = new Vector3(46.7108f, 21.39403f, -12.07076f);
+                Instantiate(itemDrop);
+            }
+        }
+        else
+        {
+            puzzleTimer = time;
         }
         pumpkinOnSquare = false;
         skullPuzzleSquare.GetComponent<SkullPuzzleSquare>().skullOnSquare = false;

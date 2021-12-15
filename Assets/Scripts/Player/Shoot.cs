@@ -39,8 +39,8 @@ public class Shoot : MonoBehaviour
     private Animator anim;
     public AudioSource audio;
     public AudioClip clip;
+    float scrollInput = 0;
 
-    
 
     // Start is called before the first frame update
     void Start()
@@ -80,29 +80,48 @@ public class Shoot : MonoBehaviour
             anim.SetTrigger("Idling");
         }
 
-        if (Input.GetKeyDown(KeyCode.Q)) 
+        InventoryManager inventoryManager = player.GetComponent<InventoryManager>();
+        scrollInput += Input.GetAxis("Mouse ScrollWheel") * 10;
+        switch (scrollInput % 3) 
         {
-            if (currentWeapon == WEAPON.WAND)
-            {
-                currentWeapon = WEAPON.FIREWAND;
-                wand.SetActive(false);
-                fWand.SetActive(true);
-                skull_wand.SetActive(false);
-            }
-            else if (currentWeapon == WEAPON.FIREWAND)
-            {
-                currentWeapon = WEAPON.SKULL;
-                wand.SetActive(false);
-                fWand.SetActive(false);
-                skull_wand.SetActive(true);
-            }
-            else if (currentWeapon == WEAPON.SKULL)
-            {
+            case 0:
                 currentWeapon = WEAPON.WAND;
                 wand.SetActive(true);
                 fWand.SetActive(false);
                 skull_wand.SetActive(false);
-            }
+                break;
+            case 1:
+                if(inventoryManager.latte)
+                {
+                    currentWeapon = WEAPON.FIREWAND;
+                    wand.SetActive(false);
+                    fWand.SetActive(true);
+                    skull_wand.SetActive(false);
+                }
+                else
+                {
+                    scrollInput++;
+                }
+                break;
+            case 2:
+                if (inventoryManager.boba)
+                {
+                    currentWeapon = WEAPON.SKULL;
+                    wand.SetActive(false);
+                    fWand.SetActive(false);
+                    skull_wand.SetActive(true);
+                }
+                else
+                {
+                    scrollInput++;
+                }
+                break;
+            default:
+                currentWeapon = WEAPON.WAND;
+                wand.SetActive(true);
+                fWand.SetActive(false);
+                skull_wand.SetActive(false);
+                break;
         }
     }
 

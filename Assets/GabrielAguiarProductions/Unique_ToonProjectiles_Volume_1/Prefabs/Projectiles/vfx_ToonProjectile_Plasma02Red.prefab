@@ -4966,7 +4966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1addc4fabbf424db7f454630782600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactFX: {fileID: 1329826249346808, guid: 996986369cfd3da4eb2d5696a5f290b7, type: 3}
+  impactFX: {fileID: 1329826249346808, guid: db7e6da5b46be064e8d3130632611a1d, type: 3}
 --- !u!1 &1446394172218258
 GameObject:
   m_ObjectHideFlags: 0

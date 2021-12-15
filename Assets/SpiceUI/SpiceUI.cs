@@ -34,6 +34,10 @@ public class SpiceUI : MonoBehaviour
     public AudioSource sound;
     public AudioClip clip;
     public GameObject spice;
+    public GameObject player;
+    public float regenTimer;
+    public bool doorUnlocked;
+    public bool firstDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +62,8 @@ public class SpiceUI : MonoBehaviour
         floatUp = true;
         damaged = false;
         health = 5;
+        doorUnlocked = false;
+        firstDamage = false; ;
 
         spiceTextSpeed = .025f;
         spiceFloatBoundariesY = .01f;
@@ -65,6 +71,7 @@ public class SpiceUI : MonoBehaviour
         testTextChain = 0;
 
         spice = GameObject.FindGameObjectWithTag("SpiceUI");
+        player = GameObject.FindGameObjectWithTag("Player");
         sound = spice.GetComponent<AudioSource>();
         clip = (AudioClip)Resources.Load("dying_player");
     }
@@ -86,17 +93,23 @@ public class SpiceUI : MonoBehaviour
                 case 0: ChangeSpiceText("Heyo bozo, name's Spice. You look like need help to pass your Univesity of Witchigan-Deadborn final exam. First off, press [C] or we can just sit here in awkward silence."); break;
                 case 1: ChangeSpiceText("Glad you like my charismatic company ;). Use [W][A][S][D] to walk around. That seemed pretty obvious, but can't be too sure with someone of your caliber."); break;
                 case 2: ChangeSpiceText("For ULTIMATE CHRONOMANCY POWER!!!!!, press [Esc] to enter the pause menu, duh."); break;
-                case 3: ChangeSpiceText("Hit [Space Bar] to throw your tiny body upwards or [Shift] to get the zoomies. If you want be rad as hell, you can run next to a wall to climb."); break;
-                case 4: ChangeSpiceText("Wanna toggle your inventory and pop out some potions? Hit [E]. (Uhhhhh maybe just have fun opening the inventory, potions are pending)"); break;
-                case 5: ChangeSpiceText("So, you see that friendly boi over there down the hallway. Go say hi. He's very friendly."); break;
-                case 6: ChangeSpiceText("Okay, okay, ya got me. [Left-Click] or hit [Ctrl] to fire an arcane blast and smoke his ass."); break;
-                case 7: ClearSpiceText(); break;
+                case 3: ChangeSpiceText("Hit [Space Bar] to throw your tiny body upwards or [Shift] to get the zoomies. If you want be rad as hell, you can walk next to a wall to climb."); break;
+                case 4: ChangeSpiceText("Not to mention, [Left-Click] to fire an arcane blast and smoke some enemy Decafs (those're the bad guys)."); break;
+                case 5: ChangeSpiceText("Wanna toggle your inventory to gaze upon your collection and pop out some potions? Hit [E]. Gotta go pickup ingredients like that coffee bag in front of you."); break;
+                case 6: ChangeSpiceText("Now, once ya got enough ingredients to brew a potion; I'll cheat and do it for ya :P. Potions will give you plenty of hella cool powers."); break;
+                case 7: ChangeSpiceText("I bet yer thinkin' \"Then, what do I do?\" Well, you gotta gather up all the components in this here dungeon to make the legendary frappe!"); break;
+                case 8: ChangeSpiceText("Go ahead and walk through that door to get this PARTY STARTED! I mean exam... a serious exam."); doorUnlocked = true; break;
+                case 9: ClearSpiceText(); break;
             }
-            testTextChain++;
+            if(testTextChain <= 8)
+            {
+                testTextChain++;
+            }
         }
         //spiceUI.GetComponent<SpiceUI>().ChangeSpiceText("Wow. Surprised that you won. Congrats, I guess... The End. Go home. Seriously, you can leave now.");
-
-        if (Input.GetKeyDown(KeyCode.C) && isTyping == false)
+        //case 6: ChangeSpiceText("So, you see that friendly boi over there down the hallway. Go say hi. He's very friendly."); break;
+        
+        if (Input.GetKeyDown(KeyCode.C))
         {            
             nextText = true;
         }
@@ -157,9 +170,9 @@ public class SpiceUI : MonoBehaviour
                 witchHat3.SetActive(false);
                 witchHat2.SetActive(false);
                 witchHat1.SetActive(false);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                SceneManager.LoadScene("Main Menu");
+                //Cursor.lockState = CursorLockMode.None;
+                //Cursor.visible = true;
+                //SceneManager.LoadScene("Main Menu");
                 break;
         }
     }
@@ -168,6 +181,11 @@ public class SpiceUI : MonoBehaviour
     {
         if (damaged == true)
         {
+            if(!firstDamage)
+            {
+                ChangeSpiceText("WATCHOUT! Your witch's hat only has 5 protection charges before you D.I.E. bum bum bummmmm.");
+                firstDamage = true;
+            }
             health -= 1;
             if (clip != null && health == 0)
             {
@@ -181,6 +199,23 @@ public class SpiceUI : MonoBehaviour
         if (damageTimer >= .5)
         {
             GetComponent<Image>().enabled = false;
+        }
+
+        if(player.GetComponent<InventoryManager>().iced)
+        {
+            if(health < 5)
+            {
+                regenTimer += Time.deltaTime;
+                if(regenTimer >= 15)
+                {
+                    health += 1;
+                    regenTimer = 0;
+                }
+            }
+            else
+            {
+                regenTimer = 0;
+            }
         }
     }
 
