@@ -24,6 +24,12 @@ TagManager:
   - Skull
   - SkullPuzzleSquare
   - PumpkinPuzzleSquare
+  - WitchHat
+  - Coffee_Bags_v1_01
+  - MilkLrg_Whole_Closed
+  - Cream_Sm_Open
+  - TeaTin_Raspberry
+  - Coffee_Bags_v5_03
   layers:
   - Default
   - TransparentFX
