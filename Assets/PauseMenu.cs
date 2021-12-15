@@ -10,6 +10,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject player;
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     // Update is called once per frame
     void Update()
     {

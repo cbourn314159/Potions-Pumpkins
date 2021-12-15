@@ -1716,7 +1716,7 @@ MonoBehaviour:
   walkSpeed: 4
   sprintSpeed: 8
   acceleration: 10
-  jumpForce: 10
+  jumpForce: 15
   gravityForce: -45
   jumpKey: 32
   sprintKey: 304
@@ -1726,6 +1726,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundCheck: {fileID: 6633146739609230261}
+  isGrounded: 0
   sound: {fileID: 0}
   head: {fileID: 597241474271437748}
 --- !u!114 &8255970241442373609
@@ -1849,14 +1850,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6857551955064854575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3a4aebfb3e7fa44a7126807304eae3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d67032e2f857f04e9dd7e8d14150556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childObj: {fileID: 0}
   inventoryObject: {fileID: 0}
+  audio: {fileID: 0}
+  clip: {fileID: 0}
   Honey_Jar_01: {fileID: 0}
   MilkSm_Choc_Open: {fileID: 0}
-  targetList: []
   inventoryPrefab: {fileID: 0}
 --- !u!114 &4474388449105389770
 MonoBehaviour:
@@ -1870,7 +1871,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb1924a720ef5eb46aac90a7345095dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  head: {fileID: 0}
   orientation: {fileID: 5941225327182713969}
+  wallRunning: 0
   wallDistance: 0.6
   minimumJumpHeight: 1.5
   wallRunGravity: 1
