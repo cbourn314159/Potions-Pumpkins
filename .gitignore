@@ -39,10 +39,4 @@ sysinfo.txt
 *.Log
 *.logs
 *.Logs
-Assets/SoundManagerPro/Scripts/Extensions/UFPS_SMPRO_INTEGRATION.unitypackage.meta
-*.meta
-Assets/SoundManagerPro/Scripts/Extensions/DFGUI_SMPRO_INTEGRATION.unitypackage.meta
-Assets/SoundManagerPro/Scripts/Extensions/NGUI_SMPRO_INTEGRATION.unitypackage.meta
-Assets/SoundManagerPro/Scripts/Extensions/PLAYMAKER_SMPRO_INTEGRATION.unitypackage.meta
-Assets/SoundManagerPro/Scripts/Extensions/TDTK_SMPRO_INTEGRATION.unitypackage.meta
-Assets/SoundManagerPro/Scripts/Extensions/UFPS_SMPRO_INTEGRATION.unitypackage.meta
+
