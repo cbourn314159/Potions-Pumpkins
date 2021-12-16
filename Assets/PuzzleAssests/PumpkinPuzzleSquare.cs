@@ -8,6 +8,7 @@ public class PumpkinPuzzleSquare : MonoBehaviour
     public GameObject skullPuzzleSquare;
     public GameObject itemDrop;
 
+    public bool itemDropped;
     public float time;
     public float puzzleTimer;
     public float delayTime;
@@ -16,6 +17,7 @@ public class PumpkinPuzzleSquare : MonoBehaviour
     void Start()
     {
         pumpkinOnSquare = false;
+        itemDropped = false;
         skullPuzzleSquare = GameObject.FindGameObjectWithTag("SkullPuzzleSquare");
         time = 0;
         delayTime = 5;
@@ -28,10 +30,11 @@ public class PumpkinPuzzleSquare : MonoBehaviour
 
         if (skullPuzzleSquare.GetComponent<SkullPuzzleSquare>().skullOnSquare && pumpkinOnSquare)
         {
-            if (time - puzzleTimer >= delayTime)
+            if (time - puzzleTimer >= delayTime && !itemDropped)
             {
                 itemDrop.transform.position = new Vector3(46.7108f, 21.39403f, -12.07076f);
                 Instantiate(itemDrop);
+                itemDropped = true;
             }
         }
         else
